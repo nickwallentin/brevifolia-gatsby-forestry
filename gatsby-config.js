@@ -9,7 +9,6 @@ module.exports = {
     author: config.author,
     authorImage: config.authorImage,
     authorDescription: config.authorDescription,
-    instagram_url: config.instagram_url,
     about: config.about,
     contact: config.contact,
   },

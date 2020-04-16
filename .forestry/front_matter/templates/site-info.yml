@@ -11,9 +11,7 @@ fields:
   - type: text
     name: author
     label: Författare
-  - type: file
-    name: authorImage
-    label: Porträtt
+
   - type: textarea
     name: authorDescription
     label: Om författaren
@@ -23,9 +21,23 @@ fields:
       schema:
         format: html-blocks
   - type: field_group
-    name: contact
-    label: contact
+    name: author
+    label: Författare
     fields:
+      - type: text
+        name: author
+        label: Författare
+      - type: textarea
+        name: authorDescription
+        label: Om författaren
+        config:
+          required: false
+          wysiwyg: true
+          schema:
+            format: html-blocks
+      - type: file
+        name: authorImage
+        label: Porträtt
       - type: text
         name: email
         label: email
