@@ -8,18 +8,6 @@ fields:
   - type: text
     name: description
     label: description
-  - type: text
-    name: author
-    label: Författare
-
-  - type: textarea
-    name: authorDescription
-    label: Om författaren
-    config:
-      required: false
-      wysiwyg: true
-      schema:
-        format: html-blocks
   - type: field_group
     name: author
     label: Författare
@@ -40,7 +28,7 @@ fields:
         label: Porträtt
       - type: text
         name: email
-        label: email
+        label: Epost
       - type: text
         name: instagram_url
         label: Instagram
