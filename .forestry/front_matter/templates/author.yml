@@ -28,5 +28,4 @@ fields:
     required: false
   label: Instagram
 pages:
-- content/authors/Lena Bergkvist.md
 - content/authors/lena-bergkvist.md
