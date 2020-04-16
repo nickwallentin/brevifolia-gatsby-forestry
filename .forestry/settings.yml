@@ -19,7 +19,7 @@ sections:
   label: Skribenter
 - type: document
   path: content/data/info.json
-  label: Info Page
+  label: 'Sida: Information'
 - type: heading
   label: Information
 - type: document
