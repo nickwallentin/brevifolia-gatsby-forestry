@@ -11,6 +11,9 @@ fields:
   - type: text
     name: author
     label: Författare
+  - type: image
+    name: authorImage
+    label: Porträtt
   - type: textarea
     name: authorDescription
     label: Om författaren
