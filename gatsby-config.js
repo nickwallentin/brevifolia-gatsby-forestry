@@ -7,10 +7,6 @@ module.exports = {
     title: config.title,
     description: config.description,
     author: config.author,
-    authorImage: config.authorImage,
-    authorDescription: config.authorDescription,
-    about: config.about,
-    contact: config.contact,
   },
   plugins: [
     "gatsby-transformer-remark",

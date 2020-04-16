@@ -2,14 +2,19 @@
 label: Site Config
 hide_body: true
 fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
+- type: field_group
+  name: author
+  label: Författare
+  fields:
   - type: text
-    name: title
-    label: title
-  - type: text
-    name: description
-    label: description
-  - type: field_group
     name: author
+<<<<<<< HEAD
     label: Om författaren
     fields:
       - type: text
@@ -32,5 +37,25 @@ fields:
       - type: text
         name: instagram_url
         label: Instagram
+=======
+    label: Författare
+  - type: textarea
+    name: authorDescription
+    label: Om författaren
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: html-blocks
+  - type: file
+    name: authorImage
+    label: Porträtt
+  - type: text
+    name: email
+    label: Epost
+  - type: text
+    name: instagram_url
+    label: Instagram
+>>>>>>> e245808085878552fc55a33395230c72bd8f5f54
 pages:
-  - config.json
+- config.json
