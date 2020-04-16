@@ -26,3 +26,5 @@ fields:
   config:
     required: false
   label: Instagram
+pages:
+- content/authors/lena-bergkvist.md
