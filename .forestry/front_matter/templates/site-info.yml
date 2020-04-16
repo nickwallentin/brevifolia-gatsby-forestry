@@ -25,12 +25,5 @@ fields:
 - type: text
   name: instagram_url
   label: Instagram
-- name: sociala_medier
-  type: field_group_list
-  config:
-    min: 
-    max: 
-    labelField: 
-  label: Sociala medier
 pages:
 - config.json
