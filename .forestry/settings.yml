@@ -5,18 +5,20 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: heading
-  label: Content
+  label: Blogg
 - type: directory
   path: content/posts
-  label: Blogg
+  label: Inlägg
   create: documents
   match: "**/*"
   new_doc_ext: md
   templates:
   - blog-post
+- type: heading
+  label: Sidor
 - type: document
   path: content/data/info.json
-  label: 'Sida: Information'
+  label: Om
 - type: heading
   label: Information
 - type: document
