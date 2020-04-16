@@ -12,6 +12,9 @@ fields:
     name: author
     label: Författare
   - type: text
+    name: authorDescription
+    label: Om författaren
+  - type: text
     name: instagram_url
     label: Instagram
 pages:
