@@ -46,7 +46,20 @@ export default function Blog(props) {
               dangerouslySetInnerHTML={{ __html: data.html }}
             />
           </div>
-          <div className="Sidebar">sidebar</div>
+          <Sidebar>
+            <div className="author">
+              <h4>Skriven av:</h4>
+              <div>
+                <img
+                  src={props.data.site.siteMetadata.author.authorImage}
+                  alt={
+                    "Porträtt av " + props.data.site.siteMetadata.author.author
+                  }
+                />
+                <strong>{props.data.site.siteMetadata.author.author}</strong>
+              </div>
+            </div>
+          </Sidebar>
         </div>
         <div>
           <Link to={`/${nextSlug}`}></Link>
@@ -84,7 +97,12 @@ const Article = styled.article`
     }
   }
 `
-const Sidebar = styled.aside``
+const Sidebar = styled.aside`
+  .author {
+    background: var(--bg-pop);
+    padding: 2vw;
+  }
+`
 
 //dynamic page query, must occur within each post context
 //$slug is made available by context from createPages call in gatsby-node.js
@@ -107,6 +125,17 @@ export const getPostData = graphql`
         }
       }
       html
+    }
+    site {
+      siteMetadata {
+        author {
+          author
+          authorDescription
+          authorImage
+          email
+          instagram_url
+        }
+      }
     }
   }
 `

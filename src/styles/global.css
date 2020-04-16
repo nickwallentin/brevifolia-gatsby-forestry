@@ -25,12 +25,29 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+  color: var(--c-heading);
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 4.5rem;
+}
+h2 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
 
 p {
   color: var(--c-body);
   font-size: 1.2rem;
   line-height: 1.8rem;
+}
+strong {
+  color: var(--c-heading);
 }
 
 .date {
