@@ -14,4 +14,13 @@ export default function Nav(props) {
   )
 }
 
-const HeaderStyled = styled.header``
+const HeaderStyled = styled.header`
+  nav {
+    padding: 2vw;
+    #logo {
+      font-size: 2rem;
+      color: var(--c-heading);
+      text-decoration: none;
+    }
+  }
+`

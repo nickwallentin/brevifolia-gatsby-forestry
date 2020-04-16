@@ -1,3 +1,17 @@
+:root {
+  --c-heading: #000000;
+  --c-body: #666666;
+}
+
 body {
   font-family: "Helvetica";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
 }

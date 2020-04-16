@@ -8,12 +8,12 @@ export default function useBlogData() {
           node {
             id
             frontmatter {
-              date(formatString: "MMMM Do, YYYY")
+              date(formatString: "D MMMM, YYYY", locale: "sv")
               author
               title
               hero_image {
                 childImageSharp {
-                  fluid( maxWidth: 800 ) {
+                  fluid(maxWidth: 800, maxHeight: 600) {
                     ...GatsbyImageSharpFluid
                   }
                 }

@@ -16,12 +16,19 @@ export default function Layout(props) {
       </Helmet>
       <Nav page={props.page} title={title} />
       <Main>{props.children}</Main>
-      <Sidebar />
+
+      <footer>
+        {" "}
+        Copyright {new Date().getFullYear()} © {title} . Alla rättigheter
+        förbehållna.
+      </footer>
     </LayoutWrapper>
   )
 }
 const Main = styled.main``
 const LayoutWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  footer {
+    padding: 4vh;
+    text-align: center;
+  }
 `
