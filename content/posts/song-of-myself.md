@@ -3,6 +3,7 @@ date: 2019-07-22T22:44:38.000+00:00
 title: Song of Myself
 author: Lena Bergkvist
 hero_image: "/content/images/ren-ran-bBiuSdck8tU-unsplash.jpg"
+forfattare: content/authors/lena-bergkvist.md
 
 ---
 I have heard what the talkers were talking, the talk of the  
