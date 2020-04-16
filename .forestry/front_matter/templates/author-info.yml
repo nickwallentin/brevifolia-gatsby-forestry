@@ -1,0 +1,15 @@
+---
+label: Author Information
+hide_body: true
+fields:
+  - type: text
+    name: name
+    label: Namn
+  - type: text
+    name: description
+    label: Beskrivning
+  - type: text
+    name: instagram_url
+    label: Instagram
+pages:
+  - config.json
