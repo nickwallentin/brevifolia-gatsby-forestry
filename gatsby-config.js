@@ -6,11 +6,12 @@ module.exports = {
   siteMetadata: {
     title: config.title,
     description: config.description,
-    repoUrl: config.repository_url,
+    author: config.author,
+    authorImage: config.authorImage,
+    authorDescription: config.authorDescription,
+    instagram_url: config.instagram_url,
     about: config.about,
     contact: config.contact,
-    primaryColor: config.primary_color,
-    infoData: infoData,
   },
   plugins: [
     "gatsby-transformer-remark",
