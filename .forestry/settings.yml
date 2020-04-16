@@ -14,6 +14,13 @@ sections:
   new_doc_ext: md
   templates:
   - blog-post
+- type: directory
+  path: content/authors
+  label: Författare
+  create: all
+  match: "**/*"
+  templates:
+  - author
 - type: heading
   label: Sidor
 - type: document
@@ -24,9 +31,6 @@ sections:
 - type: document
   path: config.json
   label: Allmänt
-- type: document
-  path: content/data/author.json
-  label: Författare
 upload_dir: content/images
 public_path: "/content/images"
 front_matter_path: ''
