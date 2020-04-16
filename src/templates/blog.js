@@ -126,16 +126,5 @@ export const getPostData = graphql`
       }
       html
     }
-    site {
-      siteMetadata {
-        author {
-          author
-          authorDescription
-          authorImage
-          email
-          instagram_url
-        }
-      }
-    }
   }
 `
