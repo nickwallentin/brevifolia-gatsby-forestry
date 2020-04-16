@@ -2,28 +2,35 @@
 label: Site Config
 hide_body: true
 fields:
-  - type: text
-    name: title
-    label: title
-  - type: text
-    name: description
-    label: description
-  - type: text
-    name: author
-    label: Författare
-  - type: file
-    name: authorImage
-    label: Porträtt
-  - type: textarea
-    name: authorDescription
-    label: Om författaren
-    config:
-      required: false
-      wysiwyg: true
-      schema:
-        format: html-blocks
-  - type: text
-    name: instagram_url
-    label: Instagram
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
+- type: text
+  name: author
+  label: Författare
+- type: file
+  name: authorImage
+  label: Porträtt
+- type: textarea
+  name: authorDescription
+  label: Om författaren
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: html-blocks
+- type: text
+  name: instagram_url
+  label: Instagram
+- name: sociala_medier
+  type: field_group_list
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Sociala medier
 pages:
-  - config.json
+- config.json
