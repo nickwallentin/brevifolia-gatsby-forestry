@@ -2,17 +2,17 @@
 label: Site Config
 hide_body: true
 fields:
-  - type: text
-    name: title
-    label: title
-  - type: text
-    name: description
-    label: description
-  - type: text
-    name: author
-    label: Författare
-  - type: text
-    name: instagram_url
-    label: Instagram
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
+- type: text
+  name: author
+  label: Författare
+- type: text
+  name: instagram_url
+  label: Instagram
 pages:
-  - config.json
+- config.json
