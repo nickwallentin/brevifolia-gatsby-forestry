@@ -1,7 +1,8 @@
 {
-  "title": "Brevifolia",
-  "description": "Starter blog using Forestry CMS with Gatsby.",
+  "title": "Lenas blogg",
+  "description": "Detta är min blogg",
   "repository_url": "https://github.com/kendallstrautman/starter-blog-gatsby",
   "author": "Lena Bergkvist",
-  "instagram_url": ""
+  "instagram_url": "",
+  "authorDescription": ""
 }
