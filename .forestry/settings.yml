@@ -1,8 +1,13 @@
 ---
 new_page_extension: md
 auto_deploy: false
+<<<<<<< HEAD
 admin_path: ""
 webhook_url:
+=======
+admin_path: ''
+webhook_url: https://webhook.gatsbyjs.com/hooks/data_source/publish/a10757c4-3410-4a97-b133-9fe5d05cbfe7
+>>>>>>> fc9233b88f4d0803e69cd7048dc9ade2f700f6ca
 sections:
 <<<<<<< HEAD
   - type: heading
