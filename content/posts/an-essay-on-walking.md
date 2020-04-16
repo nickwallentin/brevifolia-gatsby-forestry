@@ -3,6 +3,7 @@ date: 2019-07-31T22:43:31.000+00:00
 title: An Essay on Walking
 author: Lena Bergkvist
 hero_image: "/content/images/heather-shevlin-3B_NrzTjajc-unsplash.jpg"
+forfattare: content/authors/lena-bergkvist.md
 
 ---
 Then it is that I appreciate the beauty and the glory of architecture, which itself never turns in, but forever stands out and erect, keeping watch over the slumberers.
