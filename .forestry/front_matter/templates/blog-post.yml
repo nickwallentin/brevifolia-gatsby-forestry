@@ -22,6 +22,18 @@ fields:
   label: hero image
   description: Enter hero image for blog post here
   default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
+- name: forfattare
+  type: select
+  default: content/authors/lena-bergkvist.md
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: forfattare
+      file: 
+      path: 
+  label: Författare
 pages:
 - content/posts/an-essay-on-walking.md
 - content/posts/ne-te-quaesiveris-extra.md
