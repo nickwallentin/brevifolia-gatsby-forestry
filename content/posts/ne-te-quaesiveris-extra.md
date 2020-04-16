@@ -1,7 +1,7 @@
 ---
-date: 2019-08-13T22:40:32Z
+date: 2019-08-13T22:40:32.000+00:00
 title: Ne Te Quaesiveris Extra
-author: Ralph Waldo Emerson
+author: Lena Bergkvist
 hero_image: "/content/images/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
 
 ---

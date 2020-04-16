@@ -1,7 +1,7 @@
 ---
-date: 2019-08-08T22:42:09Z
+date: 2019-08-08T22:42:09.000+00:00
 title: Sunflower Sutra
-author: Allen Ginsberg
+author: Lena Bergkvist
 hero_image: "/content/images/adrien-olichon--aOsCcTJXWY-unsplash.jpg"
 
 ---
@@ -35,7 +35,7 @@ The grime was no man’s grime but death and human locomotives,
 
 all that dress of dust, that veil of darkened railroad skin, that smog of cheek, that eyelid of black mis’ry, that sooty hand or phallus or protuberance of artificial worse-than-dirt–industrial–modern–all that civilization spotting your crazy golden crown–
 
-and those blear thoughts of death and dusty loveless eyes and ends and withered roots below, in the home-pile of sand and sawdust, rubber dollar bills, skin of machinery, the guts and innards of the weeping coughing car, the empty lonely tincans with their rusty tongues alack, what more could I name, the smoked ashes of some cock cigar, the cunts of wheelbarrows and the milky breasts of cars, wornout asses out of chairs & sphincters of dynamos–all these
+and those blear thoughts of death and dusty loveless eyes and ends and withered roots below, in the home-pile of sand and sawdust, rubber dollar bills, the skin of machinery, the guts and innards of the weeping coughing car, the empty lonely tincans with their rusty tongues alack, what more could I name, the smoked ashes of some cock cigar, the cunts of wheelbarrows and the milky breasts of cars, wornout asses out of chairs & sphincters of dynamos–all these
 
 entangled in your mummied roots–and you standing before me in the sunset, all your glory in your form!
 
