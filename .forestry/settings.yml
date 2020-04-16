@@ -17,7 +17,7 @@ sections:
 - type: directory
   path: content/authors
   label: Författare
-  create: all
+  create: documents
   match: "**/*"
   templates:
   - author
