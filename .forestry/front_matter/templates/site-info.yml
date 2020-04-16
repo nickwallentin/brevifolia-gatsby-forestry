@@ -10,7 +10,7 @@ fields:
     label: description
   - type: field_group
     name: author
-    label: Författare
+    label: Om författaren
     fields:
       - type: text
         name: author
