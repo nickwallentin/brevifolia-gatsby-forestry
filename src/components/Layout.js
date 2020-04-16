@@ -20,7 +20,7 @@ export default function Layout(props) {
       <footer>
         {" "}
         Copyright {new Date().getFullYear()} © {title} . Alla rättigheter
-        förbehållna.
+        reserverade.
       </footer>
     </LayoutWrapper>
   )
