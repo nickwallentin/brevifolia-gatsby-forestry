@@ -1,19 +1,27 @@
 import React from "react"
-import Header from "./Header"
+import styled from "styled-components"
+import Nav from "./Nav"
 import Helmet from "react-helmet"
 import useSiteMetadata from "../static_queries/useSiteMetadata"
+import Sidebar from "./Sidebar"
 
 export default function Layout(props) {
   const { title, description } = useSiteMetadata()
   return (
-    <section>
+    <LayoutWrapper>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
-      <Header page={props.page} title={title} />
-      <div>{props.children}</div>
-    </section>
+      <Nav page={props.page} title={title} />
+      <Main>{props.children}</Main>
+      <Sidebar />
+    </LayoutWrapper>
   )
 }
+const Main = styled.main``
+const LayoutWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+`

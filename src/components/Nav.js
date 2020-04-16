@@ -2,10 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-export default function Header(props) {
+export default function Nav(props) {
   return (
     <HeaderStyled>
-      <nav role="navigation" aria-label="main navigation"></nav>
+      <nav role="navigation" aria-label="main navigation">
+        <Link to="/" id="logo">
+          Lenas blogg
+        </Link>
+      </nav>
     </HeaderStyled>
   )
 }

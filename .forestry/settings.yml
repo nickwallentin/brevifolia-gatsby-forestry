@@ -1,55 +1,29 @@
 ---
 new_page_extension: md
 auto_deploy: false
-<<<<<<< HEAD
 admin_path: ""
-webhook_url:
-=======
-admin_path: ''
 webhook_url: https://webhook.gatsbyjs.com/hooks/data_source/publish/a10757c4-3410-4a97-b133-9fe5d05cbfe7
->>>>>>> fc9233b88f4d0803e69cd7048dc9ade2f700f6ca
 sections:
-<<<<<<< HEAD
   - type: heading
-    label: Content
+    label: Blogg
   - type: directory
     path: content/posts
-    label: Blogg
+    label: Inlägg
     create: documents
     match: "**/*"
     new_doc_ext: md
     templates:
       - blog-post
+  - type: heading
+    label: Sidor
   - type: document
     path: content/data/info.json
-    label: "Sida: Information"
+    label: Om
   - type: heading
     label: Information
   - type: document
     path: config.json
     label: Allmänt
-=======
-- type: heading
-  label: Blogg
-- type: directory
-  path: content/posts
-  label: Inlägg
-  create: documents
-  match: "**/*"
-  new_doc_ext: md
-  templates:
-  - blog-post
-- type: heading
-  label: Sidor
-- type: document
-  path: content/data/info.json
-  label: Om
-- type: heading
-  label: Information
-- type: document
-  path: config.json
-  label: Allmänt
->>>>>>> 6aaf633bb19abff5e7455558d7f4052b06ba35b1
 upload_dir: content/images
 public_path: "/content/images"
 front_matter_path: ""
