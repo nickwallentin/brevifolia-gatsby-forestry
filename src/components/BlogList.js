@@ -16,50 +16,44 @@ export default function BlogList() {
           .map((blog, index) => {
             if (index === 0) {
               return (
-                <LatestPost>
-                  <div className="content">
-                    <h2>
-                      <Link to={`/${blog.node.fields.slug}`}>
-                        {blog.node.frontmatter.title}
-                      </Link>
-                    </h2>
-                    <p>{blog.node.excerpt}</p>
-                  </div>
-                  <figure>
-                    <Link to={`/${blog.node.fields.slug}`}>
+                <LatestPost key={blog.node.fields.slug}>
+                  <Link to={`/${blog.node.fields.slug}`}>
+                    <div className="content">
+                      <span className="date">{blog.node.frontmatter.date}</span>
+                      <h2>{blog.node.frontmatter.title}</h2>
+                      <p>{blog.node.excerpt}</p>
+                    </div>
+                    <figure>
                       <Img
                         fluid={
                           blog.node.frontmatter.hero_image.childImageSharp.fluid
                         }
                         alt={blog.node.frontmatter.title}
                       />
-                    </Link>
-                  </figure>
+                    </figure>
+                  </Link>
                 </LatestPost>
               )
             } else {
               return (
-                <Post>
-                  <figure>
-                    <Link to={`/${blog.node.fields.slug}`} key={blog.node.id}>
+                <Post key={blog.node.fields.slug}>
+                  <Link to={`/${blog.node.fields.slug}`}>
+                    <figure>
                       <Img
                         fluid={
                           blog.node.frontmatter.hero_image.childImageSharp.fluid
                         }
                         alt={blog.node.frontmatter.title}
                       />
-                    </Link>
-                  </figure>
+                    </figure>
 
-                  <div className="content">
-                    <h2>
-                      <Link to={`/${blog.node.fields.slug}`}>
-                        {blog.node.frontmatter.title}
-                      </Link>
-                    </h2>
-                    <h3>{blog.node.frontmatter.date}</h3>
-                    <p>{blog.node.excerpt}</p>
-                  </div>
+                    <div className="content">
+                      <span className="date">{blog.node.frontmatter.date}</span>
+                      <h2>{blog.node.frontmatter.title}</h2>
+
+                      <p>{blog.node.excerpt}</p>
+                    </div>
+                  </Link>
                 </Post>
               )
             }
@@ -75,43 +69,63 @@ export default function BlogList() {
 }
 const BlogListContainer = styled.div``
 
-const LatestPost = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 4vw;
+const LatestPost = styled.li`
+  background: var(--bg-pop);
 
   max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
+  margin: 2vh auto;
   margin-bottom: 4vh;
+  a {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4vw;
+    padding: 3vw;
+    color: var(--c-heading);
+    text-decoration: none;
+  }
 
   .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     h2 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      a {
-        color: var(--c-heading);
-        text-decoration: none;
-      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    a {
+      grid-template-columns: 1fr;
     }
   }
 `
-const Post = styled.div`
+const Post = styled.li`
   max-width: 1080px;
   width: 100%;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 4vw;
-  margin-bottom: 4vh;
+
+  a {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4vw;
+    padding: 3vw;
+    color: var(--c-heading);
+    text-decoration: none;
+  }
+
+  transition: all 200ms;
+
+  &:hover {
+    background: var(--bg-pop);
+  }
 
   .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
@@ -119,6 +133,12 @@ const Post = styled.div`
         color: var(--c-heading);
         text-decoration: none;
       }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    a {
+      grid-template-columns: 1fr;
     }
   }
 `

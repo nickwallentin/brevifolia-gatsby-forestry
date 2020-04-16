@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
+import styled from "styled-components"
 import { graphql, Link } from "gatsby"
 import useBlogData from "../static_queries/useBlogData"
 
@@ -25,25 +26,65 @@ export default function Blog(props) {
 
   return (
     <Layout>
-      <article>
-        <figure>
-          <Img
-            fluid={data.frontmatter.hero_image.childImageSharp.fluid}
-            alt={data.frontmatter.title}
-          />
-        </figure>
-        <div>
-          <h1>{data.frontmatter.title}</h1>
-          <h3>{data.frontmatter.date}</h3>
+      <Article>
+        <div className="header">
+          <figure>
+            <Img
+              fluid={data.frontmatter.hero_image.childImageSharp.fluid}
+              alt={data.frontmatter.title}
+            />
+          </figure>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: data.html }}></div>
+        <div className="content">
+          <div>
+            <div className="heading">
+              <span className="date">{data.frontmatter.date}</span>
+              <h1>{data.frontmatter.title}</h1>
+            </div>
+            <div
+              className="body"
+              dangerouslySetInnerHTML={{ __html: data.html }}
+            />
+          </div>
+          <div className="Sidebar">sidebar</div>
+        </div>
         <div>
           <Link to={`/${nextSlug}`}></Link>
         </div>
-      </article>
+      </Article>
     </Layout>
   )
 }
+
+const Article = styled.article`
+  padding: 2vw;
+  .header {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .heading {
+    margin-bottom: 2rem;
+    .date {
+      margin-bottom: 1rem;
+      display: block;
+    }
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  .content {
+    max-width: 1080px;
+    margin: 4rem auto;
+    grid-gap: 4vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    p {
+      margin-bottom: 2rem;
+    }
+  }
+`
+const Sidebar = styled.aside``
 
 //dynamic page query, must occur within each post context
 //$slug is made available by context from createPages call in gatsby-node.js
@@ -59,7 +100,7 @@ export const getPostData = graphql`
         date(formatString: "MMMM Do, YYYY")
         hero_image {
           childImageSharp {
-            fluid(maxWidth: 1500) {
+            fluid(maxWidth: 1200, maxHeight: 600) {
               ...GatsbyImageSharpFluid
             }
           }

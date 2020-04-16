@@ -14,6 +14,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-transformer-remark",
+    "gatsby-plugin-dark-mode",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-yaml",
     {
