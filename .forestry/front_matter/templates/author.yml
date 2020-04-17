@@ -1,4 +1,33 @@
 ---
 label: Author
 hide_body: true
-fields: []
+fields:
+- name: authorName
+  type: text
+  config:
+    required: false
+  label: Namn
+- name: authorDescription
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Beskrivning
+- name: authorPortrait
+  type: file
+  config:
+    maxSize: 5
+  label: Porträtt
+- name: authorInstagramUrl
+  type: text
+  config:
+    required: false
+  label: Instagram
+- name: authorEmail
+  type: text
+  config:
+    required: false
+  label: Epost
