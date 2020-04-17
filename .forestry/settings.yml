@@ -17,13 +17,13 @@ sections:
 - type: heading
   label: Sidor
 - type: document
-  path: content/data/author.json
-  label: Författare
-- type: document
   path: content/data/info.json
   label: Om
 - type: heading
   label: Information
+- type: document
+  path: content/data/author.json
+  label: Författare
 - type: document
   path: config.json
   label: Allmänt
