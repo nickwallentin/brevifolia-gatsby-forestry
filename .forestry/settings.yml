@@ -17,6 +17,10 @@ sections:
 - type: heading
   label: Sidor
 - type: document
+  path: content/data/author.json
+  label: Författare
+  match: "**/*"
+- type: document
   path: content/data/info.json
   label: Om
 - type: heading
