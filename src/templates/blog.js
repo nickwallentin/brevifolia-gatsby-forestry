@@ -51,7 +51,7 @@ export default function Blog(props) {
             <div className="author">
               <h4>Skriven av:</h4>
               <div>
-                <strong>{data.frontmatter.authorName}</strong>
+                <strong>Lena Bergkvist</strong>
               </div>
             </div>
           </Sidebar>
@@ -109,14 +109,6 @@ export const getPostData = graphql`
       }
       frontmatter {
         title
-        authorName
-        authorPortrait {
-          childImageSharp {
-            fluid(maxWidth: 100, maxHeight: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         date(formatString: "D MMMM, YYYY", locale: "sv")
         hero_image {
           childImageSharp {
