@@ -46,15 +46,28 @@ export default function Blog(props) {
               className="body"
               dangerouslySetInnerHTML={{ __html: data.html }}
             />
-          </div>
-          <Sidebar>
-            <div className="author">
-              <h4>Skriven av:</h4>
-              <div>
-                <strong>Lena Bergkvist</strong>
+            <Author>
+              <div className="author">
+                <figure className="author-image">
+                  <Img
+                    fluid={props.data.file.childImageSharp.fluid}
+                    alt="Porträtt av Lena Bergkvist"
+                  />
+                </figure>
+                <div className="author-content">
+                  <strong className="name">
+                    <span>Författare:</span>
+                    {props.data.site.siteMetadata.author.authorName}
+                  </strong>
+
+                  <p className="author-bio">
+                    {props.data.site.siteMetadata.author.authorDescription}
+                  </p>
+                </div>
               </div>
-            </div>
-          </Sidebar>
+            </Author>
+          </div>
+          <Sidebar>sidebar</Sidebar>
         </div>
         <div>
           <Link to={`/${nextSlug}`}></Link>
@@ -92,10 +105,39 @@ const Article = styled.article`
     }
   }
 `
-const Sidebar = styled.aside`
+const Sidebar = styled.div``
+const Author = styled.div`
   .author {
-    background: var(--bg-pop);
-    padding: 2vw;
+    padding-top: 4vh;
+    border-top: 1px solid var(--bg-pop);
+    display: grid;
+    grid-gap: 4vw;
+    grid-template-columns: 100px 2fr;
+
+    figure {
+      width: 100px;
+      height: 100px;
+      border-radius: 99px;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+    strong.name {
+      margin-bottom: 15px;
+      display: block;
+      font-size: 1.5rem;
+      span {
+        display: block;
+        font-size: 1rem;
+        margin-bottom: 5px;
+        color: var(--c-body);
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+    }
+    .author-bio {
+      font-size: 1rem;
+      line-height: 1.4rem;
+      margin-bottom: 0px;
+    }
   }
 `
 
@@ -119,6 +161,25 @@ export const getPostData = graphql`
         }
       }
       html
+    }
+    site {
+      siteMetadata {
+        author {
+          authorName
+          authorDescription
+        }
+      }
+    }
+    file(
+      relativePath: {
+        eq: "14707027_10154252586886865_4684513269585435247_o.jpg"
+      }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 100, maxHeight: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
     }
   }
 `

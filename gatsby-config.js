@@ -1,11 +1,12 @@
 const config = require("./config.json")
+const author = require("./content/data/author.json")
 
 module.exports = {
   //this makes the site config available to forestry cms
   siteMetadata: {
     title: config.title,
     description: config.description,
-    author: config.author,
+    author: author,
   },
   plugins: [
     "gatsby-transformer-remark",
@@ -24,13 +25,6 @@ module.exports = {
       options: {
         name: "posts",
         path: `${__dirname}/content/posts`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "authors",
-        path: `${__dirname}/content/authors`,
       },
     },
     {
