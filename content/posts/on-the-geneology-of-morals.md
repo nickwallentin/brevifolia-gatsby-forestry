@@ -2,7 +2,7 @@
 title: On the Geneology of Morals
 date: 2019-08-16T22:37:31.000+00:00
 hero_image: "../images/jj-ying-7JX0-bfiuxQ-unsplash.jpg"
-author: Lena Bergkvist
+author: content/authors/lena-bergkvist.md
 forfattare: content/authors/lena-bergkvist.md
 
 ---
