@@ -1,7 +1,7 @@
 ---
 date: 2019-07-31T22:43:31.000+00:00
 title: An Essay on Walking
-author: Lena Bergkvist
+author: content/authors/lena-bergkvist.md
 hero_image: "/content/images/heather-shevlin-3B_NrzTjajc-unsplash.jpg"
 forfattare: content/authors/lena-bergkvist.md
 
