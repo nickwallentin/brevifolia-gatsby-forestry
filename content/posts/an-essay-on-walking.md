@@ -3,10 +3,7 @@ date: 2019-07-31T22:43:31.000+00:00
 title: An Essay on Walking
 author: content/authors/lena-bergkvist.md
 hero_image: "/content/images/heather-shevlin-3B_NrzTjajc-unsplash.jpg"
-forfattare: content/authors/lena-bergkvist.md
-
----
-Then it is that I appreciate the beauty and the glory of architecture, which itself never turns in, but forever stands out and erect, keeping watch over the slumberers.
+---Then it is that I appreciate the beauty and the glory of architecture, which itself never turns in, but forever stands out and erect, keeping watch over the slumberers.
 
 No doubt temperament, and, above all, age, have a good deal to do with it. As a man grows older, his ability to sit still and follow indoor occupations increases. He grows vespertinal in his habits as the evening of life approaches, till at last he comes forth only just before sundown, and gets all the walk that he requires in half an hour.
 

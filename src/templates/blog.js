@@ -50,13 +50,7 @@ export default function Blog(props) {
             <div className="author">
               <h4>Skriven av:</h4>
               <div>
-                <img
-                  src={props.data.site.siteMetadata.author.authorImage}
-                  alt={
-                    "Porträtt av " + props.data.site.siteMetadata.author.author
-                  }
-                />
-                <strong>{props.data.site.siteMetadata.author.author}</strong>
+                <strong>författare</strong>
               </div>
             </div>
           </Sidebar>
