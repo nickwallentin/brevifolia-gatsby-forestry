@@ -21,3 +21,13 @@ fields:
   config:
     maxSize: 250
   label: Porträtt
+- name: instagram
+  type: text
+  config:
+    required: false
+  label: Instagram
+- name: epost
+  type: text
+  config:
+    required: false
+  label: Epost
