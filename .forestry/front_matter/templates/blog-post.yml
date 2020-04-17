@@ -30,9 +30,9 @@ fields:
       options: []
       source:
         type: pages
-        section: author
+        section: forfattare
         file:
-        path: content/authors
+        path:
     label: Författare
 pages:
   - content/posts/an-essay-on-walking.md
