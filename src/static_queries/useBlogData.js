@@ -9,7 +9,7 @@ export default function useBlogData() {
             id
             frontmatter {
               date(formatString: "D MMMM, YYYY", locale: "sv")
-              author
+
               title
               hero_image {
                 childImageSharp {

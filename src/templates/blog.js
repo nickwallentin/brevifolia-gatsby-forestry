@@ -108,7 +108,6 @@ export const getPostData = graphql`
       }
       frontmatter {
         title
-        author
         date(formatString: "D MMMM, YYYY", locale: "sv")
         hero_image {
           childImageSharp {
