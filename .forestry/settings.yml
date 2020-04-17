@@ -14,13 +14,6 @@ sections:
   new_doc_ext: md
   templates:
   - blog-post
-- type: directory
-  path: content/authors
-  label: Författare
-  create: documents
-  match: "**/*"
-  templates:
-  - author
 - type: heading
   label: Sidor
 - type: document
