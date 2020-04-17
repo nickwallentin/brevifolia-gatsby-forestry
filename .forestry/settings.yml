@@ -4,10 +4,6 @@ auto_deploy: false
 admin_path: ''
 webhook_url: https://webhook.gatsbyjs.com/hooks/data_source/publish/a10757c4-3410-4a97-b133-9fe5d05cbfe7
 sections:
-- type: document
-  path: content/data/author.json
-  label: Författare
-  match: "**/*"
 - type: heading
   label: Blogg
 - type: directory
@@ -25,6 +21,13 @@ sections:
   label: Om
 - type: heading
   label: Information
+- type: directory
+  path: content/authors
+  label: Författare
+  create: documents
+  match: "**/*"
+  templates:
+  - author
 - type: document
   path: config.json
   label: Allmänt
