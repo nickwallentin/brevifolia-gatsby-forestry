@@ -67,7 +67,7 @@ export default function Blog(props) {
               </div>
             </Author>
           </div>
-          <Sidebar>sidebar</Sidebar>
+          <Sidebar></Sidebar>
         </div>
         <div>
           <Link to={`/${nextSlug}`}></Link>
@@ -159,6 +159,9 @@ export const getPostData = graphql`
             }
           }
         }
+      }
+      headings {
+        value
       }
       html
     }

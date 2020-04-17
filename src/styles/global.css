@@ -26,6 +26,12 @@ h5,
 h6 {
   font-weight: 700;
   color: var(--c-heading);
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+}
+
+blockquote {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 h1 {
