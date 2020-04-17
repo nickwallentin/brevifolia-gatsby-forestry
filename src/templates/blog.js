@@ -11,6 +11,7 @@ export default function Blog(props) {
   const data = props.data.markdownRemark
   const allBlogData = useBlogData()
   const nextSlug = getNextSlug(data.fields.slug)
+  console.log(data)
 
   function getNextSlug(slug) {
     const allSlugs = allBlogData.map(blog => {
@@ -50,7 +51,7 @@ export default function Blog(props) {
             <div className="author">
               <h4>Skriven av:</h4>
               <div>
-                <strong>författare</strong>
+                <strong>{data.frontmatter.authorName}</strong>
               </div>
             </div>
           </Sidebar>
@@ -108,6 +109,14 @@ export const getPostData = graphql`
       }
       frontmatter {
         title
+        authorName
+        authorPortrait {
+          childImageSharp {
+            fluid(maxWidth: 100, maxHeight: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         date(formatString: "D MMMM, YYYY", locale: "sv")
         hero_image {
           childImageSharp {
