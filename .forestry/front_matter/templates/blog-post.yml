@@ -24,4 +24,3 @@ fields:
   default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
 pages:
 - content/posts/test.md
-- content/posts/this-is-a-title.md
