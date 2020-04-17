@@ -31,3 +31,5 @@ fields:
   config:
     required: false
   label: Epost
+pages:
+- content/authors/Lena Bergkvist.md
