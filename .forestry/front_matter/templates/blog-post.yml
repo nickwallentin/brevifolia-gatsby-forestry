@@ -22,17 +22,5 @@ fields:
   label: hero image
   description: Enter hero image for blog post here
   default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
-- name: author
-  type: select
-  default: content/authors/lena-bergkvist.md
-  config:
-    required: false
-    options: []
-    source:
-      type: pages
-      section: forfattare
-      file: 
-      path: 
-  label: Författare
 pages:
 - content/posts/this-is-a-title.md
