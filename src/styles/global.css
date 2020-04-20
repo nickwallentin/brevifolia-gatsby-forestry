@@ -1,6 +1,6 @@
 body {
   --c-heading: #000000;
-  --c-body: #666666;
+  --c-body: #525252;
   --bg-pop: #f2f2f2;
   --bg: #ffffff;
 
@@ -11,7 +11,7 @@ body {
 
 body.dark {
   --c-heading: #ffffff;
-  --c-body: #ffffff80;
+  --c-body: #ffffff9e;
   --bg-pop: #ffffff20;
   --bg: #000000;
 
@@ -30,8 +30,14 @@ h6 {
   margin-top: 3rem;
 }
 
-blockquote {
+blockquote,
+blockquote p {
   font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  font-style: italic;
+  color: var(--c-heading);
 }
 
 h1 {

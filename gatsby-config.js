@@ -42,6 +42,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
+    {
       resolve: "gatsby-plugin-sharp",
       options: {
         defaultQuality: 75,
