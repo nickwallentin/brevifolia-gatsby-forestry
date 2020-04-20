@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import { graphql, Link } from "gatsby"
@@ -24,15 +24,16 @@ export default function Blog(props) {
       return allSlugs[0]
     }
   }
+  useEffect(() => {
+    const headings = []
+    const allHeadings = document.querySelectorAll("h2, h3")
 
-  const heading = document.querySelector("h2")
-  heading.setAttribute(
-    "id",
-    heading.innerText
-      .toLowerCase()
-      .replace(/\W+/g, "")
-      .replace(/([åäö])+/g, "")
-  )
+    allHeadings.forEach((heading, index) => {
+      heading.setAttribute("id", "heading-" + (index + 1))
+    })
+
+    console.log(headings)
+  }, [])
 
   return (
     <Layout>
@@ -60,7 +61,16 @@ export default function Blog(props) {
             />
             <AuthorBlock />
           </div>
-          <Sidebar></Sidebar>
+          <Sidebar>
+            <h4>Innehåll</h4>
+            <ul className="content-list">
+              {props.data.markdownRemark.headings.map((heading, index) => (
+                <li className={"depth-" + heading.depth}>
+                  <a href={"#heading-" + (index + 1)}>{heading.value}</a>
+                </li>
+              ))}
+            </ul>
+          </Sidebar>
         </div>
         <div>
           <Link to={`/${nextSlug}`}></Link>
@@ -104,7 +114,18 @@ const Article = styled.article`
     }
   }
 `
-const Sidebar = styled.div``
+const Sidebar = styled.div`
+  ul li a {
+    text-decoration: none;
+    color: var(--c-heading);
+  }
+  ul li {
+    margin: 10px 0px;
+  }
+  .depth-3 {
+    margin-left: 10px;
+  }
+`
 
 //dynamic page query, must occur within each post context
 //$slug is made available by context from createPages call in gatsby-node.js
@@ -128,6 +149,7 @@ export const getPostData = graphql`
       }
       headings {
         value
+        depth
       }
       html
     }
