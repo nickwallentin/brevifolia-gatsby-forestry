@@ -18,7 +18,7 @@ const AuthorBlock = () => {
         </figure>
         <div className="author-content">
           <strong className="name">
-            <span>Författare:</span>
+            <span>Skriven av:</span>
             {data.site.siteMetadata.author.authorName}
           </strong>
 
