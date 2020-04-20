@@ -39,4 +39,5 @@ fields:
   description: Enter hero image for blog post here
   default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
 pages:
+- content/posts/9-sätt-för-dig-att-hålla-dig-hälsosam-i-sommar.md
 - content/posts/test.md
