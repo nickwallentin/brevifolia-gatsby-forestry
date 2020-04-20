@@ -25,6 +25,15 @@ export default function Blog(props) {
     }
   }
 
+  const heading = document.querySelector("h2")
+  heading.setAttribute(
+    "id",
+    heading.innerText
+      .toLowerCase()
+      .replace(/\W+/g, "")
+      .replace(/([åäö])+/g, "")
+  )
+
   return (
     <Layout>
       <Article>
@@ -40,7 +49,10 @@ export default function Blog(props) {
           <div>
             <div className="heading">
               <h1>{data.frontmatter.title}</h1>
-              <span className="date">Publicerades {data.frontmatter.date}</span>
+              <span className="date">
+                Publicerades {data.frontmatter.date}, i{" "}
+                {data.frontmatter.category}
+              </span>
             </div>
             <div
               className="body"
@@ -104,6 +116,7 @@ export const getPostData = graphql`
       }
       frontmatter {
         title
+        category
         date(formatString: "D MMMM, YYYY", locale: "sv")
         hero_image {
           childImageSharp {

@@ -19,8 +19,10 @@ export default function BlogList() {
                 <LatestPost key={blog.node.fields.slug}>
                   <Link to={`/${blog.node.fields.slug}`}>
                     <div className="content">
-                      <span className="date">{blog.node.frontmatter.date}</span>
                       <h2>{blog.node.frontmatter.title}</h2>
+                      <span className="date">
+                        Publicerades {blog.node.frontmatter.date}
+                      </span>
                       <p>{blog.node.excerpt}</p>
                     </div>
                     <figure>
@@ -83,6 +85,9 @@ const LatestPost = styled.li`
     padding: 3vw;
     color: var(--c-heading);
     text-decoration: none;
+  }
+  p {
+    margin-top: 20px;
   }
 
   .content {
