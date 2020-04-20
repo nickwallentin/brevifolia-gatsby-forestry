@@ -3,6 +3,10 @@ date: 2020-04-20T11:50:47Z
 category: Hälsa
 hero_image: "/content/images/jonathan-borba-lrQPTQs7nQQ-unsplash.jpg"
 title: 9 sätt för dig att hålla dig hälsosam i sommar
+excerpt: Far far away, behind the word mountains, far from the countries Vokalia and
+  Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
+  at the coast of the Semantics, a large language ocean. A small river named Duden
+  flows by their place and supplies it with the necessary regelialia.
 
 ---
 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
