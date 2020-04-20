@@ -5,16 +5,15 @@ fields:
 - type: text
   name: title
   label: title
-- name: date
-  type: datetime
-  label: date
-  description: Date post was created
+- name: excerpt
+  type: textarea
+  default: ''
   config:
     required: false
-    date_format: 
-    time_format: 
-    display_utc: false
-  default: now
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Ingress
 - name: category
   type: select
   default: []
@@ -38,6 +37,16 @@ fields:
   label: hero image
   description: Enter hero image for blog post here
   default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
+- name: date
+  type: datetime
+  label: date
+  description: Date post was created
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
 pages:
 - content/posts/9-sätt-för-dig-att-hålla-dig-hälsosam-i-sommar.md
 - content/posts/test.md
