@@ -15,6 +15,22 @@ fields:
     time_format: 
     display_utc: false
   default: now
+- name: category
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Mat
+    - " Träning"
+    - Hälsa
+    - Välmående
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Kategori
 - name: hero_image
   type: file
   config:
