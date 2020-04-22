@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import SEO from "../components/seo"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import { graphql, Link } from "gatsby"
@@ -38,6 +39,7 @@ export default function Blog(props) {
 
   return (
     <Layout>
+      <SEO title={data.frontmatter.title}></SEO>
       <Article>
         <div className="header">
           <div className="heading">
