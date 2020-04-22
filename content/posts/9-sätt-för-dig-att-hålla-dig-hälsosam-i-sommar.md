@@ -1,5 +1,5 @@
 ---
-date: 2020-04-20T11:50:47Z
+date: 2020-04-20T11:50:47.000+00:00
 category: Hälsa
 hero_image: "/content/images/jonathan-borba-lrQPTQs7nQQ-unsplash.jpg"
 title: 9 sätt för dig att hålla dig hälsosam i sommar
@@ -28,6 +28,10 @@ But nothing the copy said could convince her and so it didn’t take long until 
 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
 
 Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
+
+<pullquote citation="Some Person @ Company">
+This is a blockquote. Use them!
+</pullquote>
 
 ### Kost
 
