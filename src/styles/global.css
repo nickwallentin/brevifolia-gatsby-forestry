@@ -1,6 +1,7 @@
 body {
   --c-heading: #000000;
-  --c-body: #525252;
+  --c-body: #252525;
+  --c-accent: #ff002f;
   --bg-pop: #f2f2f2;
   --bg: #ffffff;
 
@@ -11,7 +12,7 @@ body {
 
 body.dark {
   --c-heading: #ffffff;
-  --c-body: #ffffff9e;
+  --c-body: #dcdcdc;
   --bg-pop: #ffffff20;
   --bg: #000000;
 
@@ -52,11 +53,16 @@ h3 {
   font-size: 2rem;
   line-height: 2.5rem;
 }
+a,
+p a {
+  color: var(--c-accent);
+}
 
 p {
   color: var(--c-body);
-  font-size: 1.2rem;
-  line-height: 1.8rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 strong {
   color: var(--c-heading);
@@ -67,4 +73,8 @@ strong {
   color: var(--c-body);
   font-family: "Georgia";
   font-weight: 300;
+}
+
+a {
+  color: var(--c-accent);
 }

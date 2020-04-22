@@ -6,9 +6,9 @@ import useBlogData from "../static_queries/useBlogData"
 import useAuthorData from "../static_queries/useAuthorData"
 import AuthorBlock from "../components/AuthorBlock"
 import Sticky from "react-sticky-el"
-
-//this component handles the blur img & fade-ins
 import Img from "gatsby-image"
+
+import FacebookIcon from "../assets/svg/facebook.svg"
 
 export default function Blog(props) {
   const data = props.data.markdownRemark
@@ -44,16 +44,28 @@ export default function Blog(props) {
         <div className="header">
           <div className="heading">
             <h1>{data.frontmatter.title}</h1>
-            <p>yoyoyoyo</p>
-            <div className="author">
-              <figure className="author-image">
-                <Img fluid={allAuthorData.file.childImageSharp.fluid} />
-              </figure>
-              <div className="author-meta">
-                <strong>
-                  {allAuthorData.site.siteMetadata.author.authorName}
-                </strong>
-                <span>{data.frontmatter.date}</span>
+            <p className="excerpt">{data.frontmatter.excerpt}</p>
+            <div className="meta">
+              <div className="author">
+                <figure className="author-image">
+                  <Img fluid={allAuthorData.file.childImageSharp.fluid} />
+                </figure>
+                <div className="author-meta">
+                  <strong>
+                    {allAuthorData.site.siteMetadata.author.authorName}
+                  </strong>
+                  <span>
+                    {data.frontmatter.date} - {data.timeToRead} minuter
+                  </span>
+                </div>
+              </div>
+              <div className="social-share">
+                <a
+                  href="https://www.facebook.com/sharer/sharer.php?u=#url"
+                  target="_blank"
+                >
+                  <FacebookIcon />
+                </a>
               </div>
             </div>
           </div>
@@ -73,7 +85,7 @@ export default function Blog(props) {
             />
             <AuthorBlock />
           </div>
-          <Sidebar>
+          <Sidebar stickyStyle={{ marginTop: "2rem" }}>
             <div className="content-list">
               <h4>Rubriker i inlägget</h4>
               <ul>
@@ -86,6 +98,12 @@ export default function Blog(props) {
             </div>
             <div className="social-share">
               <h4>Dela inlägget</h4>
+              <a
+                href="https://www.facebook.com/sharer/sharer.php?u=#url"
+                target="_blank"
+              >
+                <FacebookIcon />
+              </a>
             </div>
           </Sidebar>
         </div>
@@ -98,6 +116,25 @@ export default function Blog(props) {
 }
 
 const Article = styled.article`
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    margin-top: 2rem;
+
+    .social-share {
+      display: flex;
+      align-items: center;
+      svg {
+        width: 24px;
+        height: 24px;
+        path {
+          fill: var(--c-body);
+        }
+      }
+    }
+  }
+
   .header {
     figure.featured-image {
       max-width: 1200px;
@@ -106,7 +143,7 @@ const Article = styled.article`
     .author {
       text-align: left;
       display: block;
-      margin: 20px 0px;
+
       .author-image {
         width: 50px;
         height: 50px;
@@ -129,8 +166,7 @@ const Article = styled.article`
     }
     .heading {
       margin-bottom: 2rem;
-
-      max-width: 1080px;
+      max-width: 700px;
       width: 90%;
       margin: 4rem auto;
       .date {
@@ -149,7 +185,7 @@ const Article = styled.article`
     margin: 4rem auto;
     grid-gap: 4vw;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 700px 1fr;
     p {
       margin-bottom: 2rem;
     }
@@ -160,6 +196,9 @@ const Article = styled.article`
   }
 `
 const Sidebar = styled(Sticky)`
+  h4 {
+    margin-top: 0px;
+  }
   ul li a {
     text-decoration: none;
     color: var(--c-heading);
@@ -171,6 +210,18 @@ const Sidebar = styled(Sticky)`
   .depth-3 {
     margin: 5px 0px;
     margin-left: 10px;
+  }
+
+  .social-share {
+    margin-top: 2rem;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      path {
+        fill: var(--c-body);
+      }
+    }
   }
 `
 
@@ -185,6 +236,7 @@ export const getPostData = graphql`
       frontmatter {
         title
         category
+        excerpt
         date(formatString: "D MMMM, YYYY", locale: "sv")
         hero_image {
           childImageSharp {
@@ -199,6 +251,7 @@ export const getPostData = graphql`
         depth
       }
       html
+      timeToRead
     }
     site {
       siteMetadata {
