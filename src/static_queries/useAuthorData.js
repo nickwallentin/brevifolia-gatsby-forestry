@@ -13,11 +13,7 @@ export default function useAuthorData() {
           }
         }
       }
-      file(
-        relativePath: {
-          eq: "14707027_10154252586886865_4684513269585435247_o.jpg"
-        }
-      ) {
+      file(relativePath: { eq: "lena-bergkvist-portrait.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 100, maxHeight: 100) {
             ...GatsbyImageSharpFluid

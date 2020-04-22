@@ -122,6 +122,10 @@ export default function Blog(props) {
 }
 
 const Article = styled.article`
+  .featured-image {
+    border-radius: 4px;
+    overflow: hidden;
+  }
   .meta {
     display: flex;
     justify-content: space-between;

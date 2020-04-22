@@ -46,6 +46,10 @@ export default function BlogList() {
 const BlogListContainer = styled.div``
 
 const Post = styled.li`
+  figure {
+    border-radius: 4px;
+    overflow: hidden;
+  }
   margin: 4vh 0px;
   &:first-of-type {
     margin: 0px 0px 4vh 0px;

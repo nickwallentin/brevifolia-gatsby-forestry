@@ -11,7 +11,9 @@ export const Widget = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: ${props => (props.center ? "center" : "inherit")};
-  background: ${props => (props.block ? "var(--bg-pop)" : "transparent")};
+  background: ${props => (props.block ? "var(--bg-pop)" : "var(--bg-pop)")};
   padding: ${props => (props.block ? "2rem" : "0px")};
   margin-bottom: 2rem;
+  border-radius: 5px;
+  overflow: hidden;
 `

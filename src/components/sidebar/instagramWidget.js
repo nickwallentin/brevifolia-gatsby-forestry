@@ -62,13 +62,12 @@ const Images = styled.div`
   a {
     text-decoration: none;
     color: var(--c-heading);
-    margin-bottom: 2rem;
   }
 `
 const Bio = styled.div`
-  margin: 1rem auto;
-  max-width: 250px;
+  margin: 0 auto;
   display: flex;
+  padding: 1rem;
 `
 const BioImage = styled(Img)`
   width: 54px;
@@ -99,6 +98,8 @@ const BioMeta = styled.div`
   }
 `
 const Caption = styled.div`
+  padding: 1rem;
+
   .post-meta {
     margin: 10px 0;
   }

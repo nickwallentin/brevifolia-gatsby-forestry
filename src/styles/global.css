@@ -14,8 +14,8 @@ body {
 body.dark {
   --c-heading: #ffffff;
   --c-body: #dcdcdc;
-  --bg-pop: #ffffff10;
-  --bg: #121212;
+  --bg-pop: #232526;
+  --bg: #17181a;
 
   background: var(--bg);
 }
