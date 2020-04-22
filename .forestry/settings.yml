@@ -14,13 +14,13 @@ sections:
   new_doc_ext: md
   templates:
   - blog-post
-- type: heading
+- type: directory
+  path: content/pages
   label: Sidor
-- type: document
-  path: content/data/about.json
-  label: Om
+  create: documents
+  match: "**/*"
   templates:
-  - about-page
+  - pages
 - type: heading
   label: Information
 - type: document
