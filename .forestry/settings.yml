@@ -14,6 +14,11 @@ sections:
   new_doc_ext: md
   templates:
   - blog-post
+- type: directory
+  path: content/pages
+  label: Sidor
+  create: documents
+  match: "**/*"
 - type: heading
   label: Information
 - type: document
