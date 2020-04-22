@@ -1,4 +1,9 @@
 ---
 label: About page
 hide_body: false
-fields: []
+fields:
+- name: pageName
+  type: text
+  config:
+    required: false
+  label: Sidans namn
