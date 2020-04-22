@@ -5,7 +5,7 @@ admin_path: ''
 webhook_url: https://webhook.gatsbyjs.com/hooks/data_source/publish/a10757c4-3410-4a97-b133-9fe5d05cbfe7
 sections:
 - type: heading
-  label: Blogg
+  label: Innehåll
 - type: directory
   path: content/posts
   label: Inlägg
@@ -15,18 +15,13 @@ sections:
   templates:
   - blog-post
 - type: heading
-  label: Sidor
-- type: document
-  path: content/data/info.json
-  label: Om
-- type: document
-  path: content/data/author.json
-  label: Om författaren
-- type: heading
   label: Information
 - type: document
   path: config.json
   label: Allmänt
+- type: document
+  path: content/data/author.json
+  label: Om författaren
 upload_dir: content/images
 public_path: "/content/images"
 front_matter_path: ''
