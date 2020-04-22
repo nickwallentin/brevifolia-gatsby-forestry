@@ -43,6 +43,7 @@ export default function Blog(props) {
       <Article>
         <div className="header">
           <div className="heading">
+            <div className="category">{data.frontmatter.category}</div>
             <h1>{data.frontmatter.title}</h1>
             <p className="excerpt">{data.frontmatter.excerpt}</p>
             <div className="meta">
@@ -169,6 +170,12 @@ const Article = styled.article`
       max-width: 700px;
       width: 90%;
       margin: 4rem auto;
+      .category {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+      }
       .date {
         margin-bottom: 0rem;
         display: block;
