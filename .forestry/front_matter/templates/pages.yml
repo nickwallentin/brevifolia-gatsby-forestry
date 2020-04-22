@@ -1,4 +1,9 @@
 ---
 label: Pages
 hide_body: false
-fields: []
+fields:
+- name: rubrik
+  type: text
+  config:
+    required: false
+  label: Rubrik
