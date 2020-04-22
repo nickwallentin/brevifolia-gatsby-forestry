@@ -38,7 +38,9 @@ const InstagramWidget = () => {
             >
               <Img fluid={edge.node.localFile.childImageSharp.fluid} />
               <Caption>
-                <div className="post-meta">{edge.node.likes} likes</div>
+                <div className="post-meta">
+                  {edge.node.likes} gilla-markeringar
+                </div>
                 <p>{edge.node.caption}</p>
               </Caption>
             </a>

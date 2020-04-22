@@ -79,15 +79,20 @@ export default function Blog(props) {
         <div className="content">
           <div>
             <div
+              id="body"
               className="body"
               dangerouslySetInnerHTML={{ __html: data.html }}
             />
             <AuthorBlock />
           </div>
-          <Sidebar stickyStyle={{ marginTop: "2rem" }}>
+          <Sidebar stickyStyle={{ marginTop: "2rem" }} topOffset={-30}>
             <div className="content-list">
               <h4>Innehåll</h4>
               <ul>
+                <li>
+                  {" "}
+                  <a href="#body">Introduktion</a>
+                </li>
                 {props.data.markdownRemark.headings.map((heading, index) => (
                   <li className={"depth-" + heading.depth}>
                     <a href={"#heading-" + (index + 1)}>{heading.value}</a>
@@ -221,7 +226,7 @@ const Sidebar = styled(Sticky)`
   }
   ul li a {
     text-decoration: none;
-    color: var(--c-heading);
+    color: var(--c-body);
   }
 
   .depth-2 {

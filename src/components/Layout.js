@@ -43,7 +43,7 @@ const SideBarLayout = styled.div`
   grid-template-columns: 3fr 1fr;
   grid-gap: 2vw;
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: 2rem auto;
 
   @media screen and (max-width: 875px) {
     grid-template-columns: 1fr;
