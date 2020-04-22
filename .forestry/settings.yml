@@ -19,7 +19,6 @@ sections:
 - type: document
   path: content/data/about.json
   label: Om
-  match: "**/*"
 - type: heading
   label: Information
 - type: document
