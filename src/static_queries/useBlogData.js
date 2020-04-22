@@ -11,15 +11,23 @@ export default function useBlogData() {
               date(formatString: "D MMMM, YYYY", locale: "sv")
               category
               title
-              hero_image {
+              excerpt
+              hero: hero_image {
                 childImageSharp {
-                  fluid(maxWidth: 800, maxHeight: 600) {
+                  fluid(maxWidth: 800, maxHeight: 400) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              thumbnail: hero_image {
+                childImageSharp {
+                  fluid(maxWidth: 200, maxHeight: 200, cropFocus: CENTER) {
                     ...GatsbyImageSharpFluid
                   }
                 }
               }
             }
-            excerpt(pruneLength: 200)
+
             fields {
               slug
             }

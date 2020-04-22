@@ -34,8 +34,6 @@ export default function Blog(props) {
     allHeadings.forEach((heading, index) => {
       heading.setAttribute("id", "heading-" + (index + 1))
     })
-
-    console.log(headings)
   }, [])
 
   return (
@@ -88,7 +86,7 @@ export default function Blog(props) {
           </div>
           <Sidebar stickyStyle={{ marginTop: "2rem" }}>
             <div className="content-list">
-              <h4>Rubriker i inlägget</h4>
+              <h4>Innehåll</h4>
               <ul>
                 {props.data.markdownRemark.headings.map((heading, index) => (
                   <li className={"depth-" + heading.depth}>
@@ -137,10 +135,11 @@ const Article = styled.article`
   }
 
   .header {
-    figure.featured-image {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4vw;
+    margin: 2rem 0px;
+
     .author {
       text-align: left;
       display: block;
@@ -166,15 +165,17 @@ const Article = styled.article`
       align-items: center;
     }
     .heading {
-      margin-bottom: 2rem;
-      max-width: 700px;
-      width: 90%;
-      margin: 4rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: center;
+
       .category {
         font-family: Georgia, "Times New Roman", Times, serif;
         font-style: italic;
         font-size: 1.2rem;
         margin-bottom: 15px;
+        color: var(--c-body);
       }
       .date {
         margin-bottom: 0rem;
@@ -199,6 +200,18 @@ const Article = styled.article`
 
     @media screen and (max-width: 840px) {
       grid-template-columns: 1fr;
+    }
+  }
+  @media screen and (max-width: 840px) {
+    .header {
+      grid-template-columns: 1fr;
+      max-width: 100%;
+      .heading {
+        padding: 0px;
+        width: 90%;
+        margin: 0 auto;
+        max-width: 100%;
+      }
     }
   }
 `
@@ -247,7 +260,7 @@ export const getPostData = graphql`
         date(formatString: "D MMMM, YYYY", locale: "sv")
         hero_image {
           childImageSharp {
-            fluid(maxWidth: 1200, maxHeight: 600) {
+            fluid(maxWidth: 900, maxHeight: 900, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid
             }
           }

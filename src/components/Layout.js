@@ -3,10 +3,12 @@ import styled from "styled-components"
 import Nav from "./Nav"
 import Helmet from "react-helmet"
 import useSiteMetadata from "../static_queries/useSiteMetadata"
-import Sidebar from "./Sidebar"
+import Sidebar from "./sidebar/Sidebar"
 
 export default function Layout(props) {
   const { title, description } = useSiteMetadata()
+  const { hasSidebar } = props
+
   return (
     <LayoutWrapper>
       <Helmet>
@@ -15,7 +17,17 @@ export default function Layout(props) {
         <meta name="description" content={description} />
       </Helmet>
       <Nav page={props.page} title={title} />
-      <Main>{props.children}</Main>
+
+      {hasSidebar ? (
+        <SideBarLayout>
+          <Main>{props.children}</Main>
+          <Sidebar />
+        </SideBarLayout>
+      ) : (
+        <NormalLayout>
+          <Main>{props.children}</Main>
+        </NormalLayout>
+      )}
 
       <footer>
         {" "}
@@ -26,9 +38,26 @@ export default function Layout(props) {
   )
 }
 const Main = styled.main``
+const SideBarLayout = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 2vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+
+  @media screen and (max-width: 875px) {
+    grid-template-columns: 1fr;
+  }
+`
+const NormalLayout = styled.div`
+  max-width: var(--max-width);
+  margin: 0 auto;
+`
+
 const LayoutWrapper = styled.div`
   footer {
     padding: 4vh;
     text-align: center;
+    color: var(--c-body);
   }
 `

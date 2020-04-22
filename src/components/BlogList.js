@@ -14,51 +14,25 @@ export default function BlogList() {
         {blogData
           .filter(blog => blog.node.frontmatter.title !== "")
           .map((blog, index) => {
-            if (index === 0) {
-              return (
-                <LatestPost key={blog.node.fields.slug}>
-                  <Link to={`/${blog.node.fields.slug}`}>
-                    <div className="content">
-                      <h2>{blog.node.frontmatter.title}</h2>
-                      <span className="date">
-                        Publicerades {blog.node.frontmatter.date}
-                      </span>
-                      <p>{blog.node.excerpt}</p>
-                    </div>
-                    <figure>
-                      <Img
-                        fluid={
-                          blog.node.frontmatter.hero_image.childImageSharp.fluid
-                        }
-                        alt={blog.node.frontmatter.title}
-                      />
-                    </figure>
-                  </Link>
-                </LatestPost>
-              )
-            } else {
-              return (
-                <Post key={blog.node.fields.slug}>
-                  <Link to={`/${blog.node.fields.slug}`}>
-                    <figure>
-                      <Img
-                        fluid={
-                          blog.node.frontmatter.hero_image.childImageSharp.fluid
-                        }
-                        alt={blog.node.frontmatter.title}
-                      />
-                    </figure>
+            return (
+              <Post key={blog.node.fields.slug}>
+                <Link to={`/${blog.node.fields.slug}`}>
+                  <figure>
+                    <Img
+                      fluid={blog.node.frontmatter.hero.childImageSharp.fluid}
+                      alt={blog.node.frontmatter.title}
+                    />
+                  </figure>
 
-                    <div className="content">
-                      <span className="date">{blog.node.frontmatter.date}</span>
-                      <h2>{blog.node.frontmatter.title}</h2>
+                  <div className="content">
+                    <h2>{blog.node.frontmatter.title}</h2>
+                    <span className="date">{blog.node.frontmatter.date}</span>
 
-                      <p>{blog.node.excerpt}</p>
-                    </div>
-                  </Link>
-                </Post>
-              )
-            }
+                    <p>{blog.node.frontmatter.excerpt}</p>
+                  </div>
+                </Link>
+              </Post>
+            )
           })}
       </BlogListContainer>
     )
@@ -71,69 +45,32 @@ export default function BlogList() {
 }
 const BlogListContainer = styled.div``
 
-const LatestPost = styled.li`
-  background: var(--bg-pop);
-
-  max-width: 1200px;
-  width: 100%;
-  margin: 2vh auto;
-  margin-bottom: 4vh;
+const Post = styled.li`
+  margin: 4vh 0px;
+  &:first-of-type {
+    margin: 0px 0px 4vh 0px;
+  }
   a {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 4vw;
-    padding: 3vw;
     color: var(--c-heading);
     text-decoration: none;
-  }
-  p {
-    margin-top: 20px;
   }
 
   .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 4vh 0px;
 
-    h2 {
-      font-size: 3rem;
+    .date {
       margin-bottom: 1rem;
     }
-  }
-  @media screen and (max-width: 800px) {
-    a {
-      grid-template-columns: 1fr;
-    }
-  }
-`
-const Post = styled.li`
-  max-width: 1080px;
-  width: 100%;
-  margin: 0 auto;
-
-  a {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 4vw;
-    padding: 3vw;
-    color: var(--c-heading);
-    text-decoration: none;
-  }
-
-  transition: all 200ms;
-
-  &:hover {
-    background: var(--bg-pop);
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 
     h2 {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0rem;
+      margin-top: 0px;
       a {
         color: var(--c-heading);
         text-decoration: none;

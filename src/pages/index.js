@@ -4,10 +4,8 @@ import BlogList from "../components/BlogList"
 
 export default function IndexPage() {
   return (
-    <Layout page="home" bgColor="inherit">
-      <section>
-        <BlogList />
-      </section>
+    <Layout hasSidebar={true} page="home" bgColor="inherit">
+      <BlogList />
     </Layout>
   )
 }
