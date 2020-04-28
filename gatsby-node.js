@@ -24,6 +24,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
   //dynamically create pages here
   //get path to template
   const blogTemplate = path.resolve("./src/templates/blog.js")
+  const categoryTemplate = path.resolve("./src/templates/category.js")
+
   //get slugs
   const response = await graphql(`
     query {
@@ -54,5 +56,19 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
     category.push(edge.node.frontmatter.category)
   })
-  console.log(category)
+
+  const cats = _.uniq(category)
+  cats.forEach(cat => {
+    const slug = _.trim(
+      cat.replace(/["åä"]+/g, "a").replace(/["ö"]+/g, "o")
+    ).toLowerCase()
+
+    createPage({
+      component: categoryTemplate,
+      path: `/${slug}`,
+      context: {
+        category: cat,
+      },
+    })
+  })
 }
