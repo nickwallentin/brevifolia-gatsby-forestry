@@ -1,7 +1,7 @@
 ---
-category: " Träning"
+category: Välmående
 hero_image: "/content/images/ruslan-bardash-g83y6do219w-unsplash.jpg"
-date: 2020-04-22T13:18:08Z
+date: 2020-04-22T13:18:08.000+00:00
 title: Dagens träningspass
 excerpt: Far far away, behind the word mountains, far from the countries Vokalia and
   Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
