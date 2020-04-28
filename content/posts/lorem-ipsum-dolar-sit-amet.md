@@ -1,7 +1,7 @@
 ---
-category: " Träning"
+category: Träning
 hero_image: "/content/images/heather-shevlin-3B_NrzTjajc-unsplash.jpg"
-date: 2020-04-22T13:17:12Z
+date: 2020-04-22T13:17:12.000+00:00
 title: Lorem ipsum dolar sit amet
 excerpt: Far far away, behind the word mountains, far from the countries Vokalia and
   Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
