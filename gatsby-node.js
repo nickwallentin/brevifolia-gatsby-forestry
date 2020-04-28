@@ -1,4 +1,5 @@
 const path = require("path")
+const _ = require("lodash")
 
 module.exports.onCreateNode = ({ node, actions }) => {
   // Transform the new node here and create a new node or
@@ -32,12 +33,16 @@ module.exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
+            frontmatter {
+              category
+            }
           }
         }
       }
     }
   `)
   //create new pages with unique slug
+  const category = []
   response.data.allMarkdownRemark.edges.forEach(edge => {
     createPage({
       component: blogTemplate,
@@ -46,5 +51,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
         slug: edge.node.fields.slug,
       },
     })
+
+    category.push(edge.node.frontmatter.category)
   })
+  console.log(category)
 }

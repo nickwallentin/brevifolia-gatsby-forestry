@@ -1,35 +1,54 @@
 import React from "react"
 import styled from "styled-components"
+import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import useBlogData from "../static_queries/useBlogData"
 import Img from "gatsby-image"
 
 import { Wrap } from "./styled"
 
+const List = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+}
+const Item = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+}
+
 export default function BlogList() {
   const blogData = useBlogData()
   function renderBlogData() {
     return (
-      <BlogListContainer>
+      <BlogListContainer initial="hidden" animate="visible" variants={List}>
         {blogData
           .filter(blog => blog.node.frontmatter.title !== "")
           .map((blog, index) => {
             return (
-              <Post key={blog.node.fields.slug}>
+              <Post
+                variants={Item}
+                key={blog.node.fields.slug}
+                whileHover="hover"
+              >
                 <Link to={`/${blog.node.fields.slug}`}>
-                  <figure>
+                  <motion.figure>
                     <Img
                       fluid={blog.node.frontmatter.hero.childImageSharp.fluid}
                       alt={blog.node.frontmatter.title}
                     />
-                  </figure>
+                  </motion.figure>
 
-                  <div className="content">
+                  <motion.div className="content">
                     <h2>{blog.node.frontmatter.title}</h2>
                     <span className="date">{blog.node.frontmatter.date}</span>
 
                     <p>{blog.node.frontmatter.excerpt}</p>
-                  </div>
+                  </motion.div>
                 </Link>
               </Post>
             )
@@ -43,9 +62,9 @@ export default function BlogList() {
     </section>
   )
 }
-const BlogListContainer = styled.div``
+const BlogListContainer = styled(motion.div)``
 
-const Post = styled.li`
+const Post = styled(motion.li)`
   figure {
     border-radius: 4px;
     overflow: hidden;

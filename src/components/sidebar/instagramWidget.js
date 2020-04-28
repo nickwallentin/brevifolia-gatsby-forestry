@@ -35,6 +35,7 @@ const InstagramWidget = () => {
               href={authorInstagramUrl}
               rel="noopener noreferrer"
               target="_blank"
+              key={JSON.stringify(edge)}
             >
               <Img fluid={edge.node.localFile.childImageSharp.fluid} />
               <Caption>

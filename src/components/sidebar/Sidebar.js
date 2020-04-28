@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-
+import TagsWidget from "./tagsWidget"
 import AboutWidget from "./aboutWidget"
 import InstagramWidget from "./instagramWidget"
 import LatestPostsWidget from "./latestPostsWidget"
@@ -8,6 +8,7 @@ import LatestPostsWidget from "./latestPostsWidget"
 const Sidebar = () => {
   return (
     <Container>
+      <TagsWidget />
       <AboutWidget />
       <InstagramWidget />
     </Container>

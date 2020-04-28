@@ -15,9 +15,6 @@ export default function Nav(props) {
           <li>
             <Link to="/">Blogg</Link>
           </li>
-          <li>
-            <Link to="/om">Om Lena</Link>
-          </li>
         </Links>
         <ThemeMode />
       </nav>

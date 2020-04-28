@@ -1,7 +1,8 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import SEO from "../components/seo"
 import Layout from "../components/Layout"
 import styled from "styled-components"
+import { motion, useViewportScroll, useTransform } from "framer-motion"
 import { graphql, Link } from "gatsby"
 import useBlogData from "../static_queries/useBlogData"
 import useAuthorData from "../static_queries/useAuthorData"
@@ -10,6 +11,15 @@ import Sticky from "react-sticky-el"
 import Img from "gatsby-image"
 
 import FacebookIcon from "../assets/svg/facebook.svg"
+
+const fadeIn = {
+  start: {
+    opacity: 0,
+  },
+  end: {
+    opacity: 1,
+  },
+}
 
 export default function Blog(props) {
   const data = props.data.markdownRemark
@@ -40,9 +50,9 @@ export default function Blog(props) {
   return (
     <Layout>
       <SEO title={data.frontmatter.title}></SEO>
-      <Article>
-        <div className="header">
-          <div className="heading">
+      <Article initial="start" animate="end">
+        <motion.div className="header">
+          <motion.div className="heading" variants={fadeIn}>
             <div className="category">{data.frontmatter.category}</div>
             <h1>{data.frontmatter.title}</h1>
             <p className="excerpt">{data.frontmatter.excerpt}</p>
@@ -69,16 +79,16 @@ export default function Blog(props) {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <figure className="featured-image">
+          <motion.figure variants={fadeIn} className="featured-image">
             <Img
               fluid={data.frontmatter.hero_image.childImageSharp.fluid}
               alt={data.frontmatter.title}
             />
-          </figure>
-        </div>
-        <div className="content">
+          </motion.figure>
+        </motion.div>
+        <motion.div variants={fadeIn} className="content">
           <div>
             <div
               id="body"
@@ -87,32 +97,7 @@ export default function Blog(props) {
             />
             <AuthorBlock />
           </div>
-          <Sidebar stickyStyle={{ marginTop: "2rem" }} topOffset={-30}>
-            <div className="content-list">
-              <h4>Innehåll</h4>
-              <ul>
-                <li>
-                  {" "}
-                  <a href="#body">Introduktion</a>
-                </li>
-                {props.data.markdownRemark.headings.map((heading, index) => (
-                  <li className={"depth-" + heading.depth}>
-                    <a href={"#heading-" + (index + 1)}>{heading.value}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="social-share">
-              <h4>Dela inlägget</h4>
-              <a
-                href="https://www.facebook.com/sharer/sharer.php?u=#url"
-                target="_blank"
-              >
-                <FacebookIcon />
-              </a>
-            </div>
-          </Sidebar>
-        </div>
+        </motion.div>
         <div>
           <Link to={`/${nextSlug}`}></Link>
         </div>
@@ -121,7 +106,7 @@ export default function Blog(props) {
   )
 }
 
-const Article = styled.article`
+const Article = styled(motion.article)`
   .featured-image {
     border-radius: 4px;
     overflow: hidden;
@@ -199,12 +184,10 @@ const Article = styled.article`
   }
 
   .content {
-    max-width: 1080px;
+    max-width: 700px;
     width: 90%;
-    margin: 4rem auto;
-    grid-gap: 4vw;
-    display: grid;
-    grid-template-columns: 700px 1fr;
+    margin: 5rem auto;
+
     p {
       margin-bottom: 2rem;
     }

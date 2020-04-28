@@ -1,15 +1,30 @@
 import React from "react"
 import styled from "styled-components"
+import { motion } from "framer-motion"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
 import DarkIcon from "../../assets/svg/darkmode.svg"
 import LightIcon from "../../assets/svg/lightmode.svg"
+
+const icons = {
+  light: {
+    rotate: 0,
+  },
+  dark: {
+    rotate: -360,
+  },
+}
 
 const ThemeMode = () => {
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
         <Icon
+          initial="light"
+          animate={theme === "light" ? "light" : "dark"}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.8 }}
+          variants={icons}
           className={theme === "light" ? "light" : "dark"}
           onClick={() => toggleTheme(theme === "dark" ? "light" : "dark")}
         >
@@ -30,7 +45,7 @@ const ThemeMode = () => {
 
 export default ThemeMode
 
-const Icon = styled.span`
+const Icon = styled(motion.span)`
   color: var(--c-heading);
   display: flex;
   align-items: center;
