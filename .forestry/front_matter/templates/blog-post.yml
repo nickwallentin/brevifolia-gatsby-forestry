@@ -21,9 +21,9 @@ fields:
     required: false
     options:
     - Mat
-    - " Träning"
     - Hälsa
     - Välmående
+    - Träning
     source:
       type: simple
       section: 
