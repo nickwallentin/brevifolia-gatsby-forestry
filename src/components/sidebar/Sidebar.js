@@ -8,8 +8,8 @@ import LatestPostsWidget from "./latestPostsWidget"
 const Sidebar = () => {
   return (
     <Container>
-      <TagsWidget />
       <AboutWidget />
+      <TagsWidget />
       <InstagramWidget />
     </Container>
   )

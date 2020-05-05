@@ -19,9 +19,9 @@ export default function useBlogData() {
                   }
                 }
               }
-              thumbnail: hero_image {
+              mobile: hero_image {
                 childImageSharp {
-                  fluid(maxWidth: 200, maxHeight: 200, cropFocus: CENTER) {
+                  fluid(maxWidth: 400, maxHeight: 400, cropFocus: CENTER) {
                     ...GatsbyImageSharpFluid
                   }
                 }

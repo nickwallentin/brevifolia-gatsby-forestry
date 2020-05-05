@@ -49,6 +49,11 @@ const Icon = styled(motion.span)`
   color: var(--c-heading);
   display: flex;
   align-items: center;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   background: var(--bg-pop);
   border-radius: 99px;

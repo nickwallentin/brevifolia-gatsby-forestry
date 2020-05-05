@@ -14,7 +14,7 @@ const AllTagsWidget = () => {
 
   return (
     <Container>
-      <h4>Katerogier</h4>
+      <h4>Kategorier</h4>
       <Tags>
         {_.uniq(categories).map(cat => (
           <Link

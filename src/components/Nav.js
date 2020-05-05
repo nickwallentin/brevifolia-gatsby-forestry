@@ -4,12 +4,14 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import ThemeMode from "../components/ui/themeMode"
 
+import Logo from "../assets/svg/ha-kul-for-fan.svg"
+
 export default function Nav(props) {
   return (
     <HeaderStyled>
       <nav role="navigation" aria-label="main navigation">
         <Link to="/" id="logo">
-          Lena Bergkvist
+          <Logo />
         </Link>
         <Links>
           <li>
@@ -27,9 +29,12 @@ const HeaderStyled = styled.header`
   position: relative;
   background: var(--bg);
   nav {
-    padding: 1vw 2vw;
+    padding: 1rem 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
     #logo {
       font-size: 2rem;
       line-height: 2.5rem;
@@ -37,6 +42,15 @@ const HeaderStyled = styled.header`
       text-decoration: none;
       margin-right: 2rem;
       font-weight: 700;
+      svg {
+        width: 100px;
+        path {
+          fill: var(--c-heading);
+        }
+      }
+      @media screen and (max-width: 500px) {
+        font-size: 1.2rem;
+      }
     }
   }
 `

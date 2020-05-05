@@ -1,9 +1,11 @@
-import React from "react"
+import React, { Fragment } from "react"
 import styled from "styled-components"
 import Nav from "./Nav"
 import Helmet from "react-helmet"
 import useSiteMetadata from "../static_queries/useSiteMetadata"
 import Sidebar from "./sidebar/Sidebar"
+import TagsWidget from "../components/sidebar/tagsWidget"
+import { Wrap } from "./styled"
 
 export default function Layout(props) {
   const { title, description } = useSiteMetadata()

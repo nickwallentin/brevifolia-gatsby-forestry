@@ -6,6 +6,7 @@ import useBlogData from "../static_queries/useBlogData"
 import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
+import Media from "react-media"
 
 import FacebookIcon from "../assets/svg/facebook.svg"
 
@@ -40,9 +41,27 @@ export default function Blog(props) {
               >
                 <Link to={`/${blog.node.fields.slug}`}>
                   <motion.figure>
-                    <Img
-                      fluid={blog.node.frontmatter.hero.childImageSharp.fluid}
-                      alt={blog.node.frontmatter.title}
+                    <Media
+                      query="(min-width: 501px)"
+                      render={() => (
+                        <Img
+                          fluid={
+                            blog.node.frontmatter.hero.childImageSharp.fluid
+                          }
+                          alt={blog.node.frontmatter.title}
+                        />
+                      )}
+                    />
+                    <Media
+                      query="(max-width: 500px)"
+                      render={() => (
+                        <Img
+                          fluid={
+                            blog.node.frontmatter.mobile.childImageSharp.fluid
+                          }
+                          alt={blog.node.frontmatter.title}
+                        />
+                      )}
                     />
                   </motion.figure>
 
@@ -64,9 +83,13 @@ export default function Blog(props) {
 const BlogListContainer = styled(motion.div)``
 
 const Post = styled(motion.li)`
+  list-style: none;
   figure {
     border-radius: 4px;
     overflow: hidden;
+    @media screen and (max-width: 500px) {
+      border-radius: 0px;
+    }
   }
   margin: 4vh 0px;
   &:first-of-type {
@@ -129,9 +152,9 @@ export const getPostsByCategoryData = graphql`
                 }
               }
             }
-            thumbnail: hero_image {
+            mobile: hero_image {
               childImageSharp {
-                fluid(maxWidth: 200, maxHeight: 200, cropFocus: CENTER) {
+                fluid(maxWidth: 400, maxHeight: 400, cropFocus: CENTER) {
                   ...GatsbyImageSharpFluid
                 }
               }

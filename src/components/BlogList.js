@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import useBlogData from "../static_queries/useBlogData"
 import Img from "gatsby-image"
+import Media from "react-media"
 
 import { Wrap } from "./styled"
 
@@ -37,9 +38,27 @@ export default function BlogList() {
               >
                 <Link to={`/${blog.node.fields.slug}`}>
                   <motion.figure>
-                    <Img
-                      fluid={blog.node.frontmatter.hero.childImageSharp.fluid}
-                      alt={blog.node.frontmatter.title}
+                    <Media
+                      query="(min-width: 501px)"
+                      render={() => (
+                        <Img
+                          fluid={
+                            blog.node.frontmatter.hero.childImageSharp.fluid
+                          }
+                          alt={blog.node.frontmatter.title}
+                        />
+                      )}
+                    />
+                    <Media
+                      query="(max-width: 500px)"
+                      render={() => (
+                        <Img
+                          fluid={
+                            blog.node.frontmatter.mobile.childImageSharp.fluid
+                          }
+                          alt={blog.node.frontmatter.title}
+                        />
+                      )}
                     />
                   </motion.figure>
 
@@ -68,6 +87,9 @@ const Post = styled(motion.li)`
   figure {
     border-radius: 4px;
     overflow: hidden;
+    @media screen and (max-width: 500px) {
+      border-radius: 0px;
+    }
   }
   margin: 4vh 0px;
   &:first-of-type {
