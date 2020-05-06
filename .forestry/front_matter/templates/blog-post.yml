@@ -2,6 +2,9 @@
 label: Blog Post
 hide_body: false
 fields:
+- name: draft
+  type: boolean
+  label: Utkast
 - type: text
   name: title
   label: title
