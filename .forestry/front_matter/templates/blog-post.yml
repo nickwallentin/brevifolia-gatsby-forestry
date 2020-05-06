@@ -5,6 +5,7 @@ fields:
 - name: draft
   type: boolean
   label: Utkast
+  default: true
 - type: text
   name: title
   label: title
