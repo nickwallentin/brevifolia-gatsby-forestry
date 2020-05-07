@@ -10,10 +10,9 @@ excerpt: |-
   Helt plötsligt är man 50+.
 
 ---
-
 Det är då det slår en.
 
-Att livet måste vara ENKELT och ROLIGT.
+Att livet måste vara **ENKELT** och **ROLIGT**.
 
 Hur skulle det annars vara.
 
