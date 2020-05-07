@@ -1,6 +1,6 @@
 ---
 draft: false
-category: Välmående
+category: Hälsa
 hero_image: "/content/images/IMG_9798.JPG"
 date: 2020-03-18T12:37:36Z
 title: Det är nu.
