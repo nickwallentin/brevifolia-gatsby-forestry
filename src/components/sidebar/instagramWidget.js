@@ -19,7 +19,7 @@ const InstagramWidget = () => {
         <Bio>
           <BioImage fluid={image} />
           <BioMeta>
-            <strong>{authorName}</strong>
+            <strong>Ha kul för fan!</strong>
             <a
               href={authorInstagramUrl}
               rel="noopener noreferrer"
