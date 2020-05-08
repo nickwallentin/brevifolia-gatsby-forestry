@@ -3,7 +3,10 @@ import { graphql, useStaticQuery } from "gatsby"
 export default function useBlogData() {
   const data = useStaticQuery(graphql`
     query getBlogData {
-      allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { draft: { eq: false } } }
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
         edges {
           node {
             id
@@ -14,14 +17,14 @@ export default function useBlogData() {
               excerpt
               hero: hero_image {
                 childImageSharp {
-                  fluid(maxWidth: 800, maxHeight: 400) {
+                  fluid(maxWidth: 800, maxHeight: 400, cropFocus: ATTENTION) {
                     ...GatsbyImageSharpFluid
                   }
                 }
               }
               mobile: hero_image {
                 childImageSharp {
-                  fluid(maxWidth: 400, maxHeight: 400, cropFocus: CENTER) {
+                  fluid(maxWidth: 400, maxHeight: 400, cropFocus: ATTENTION) {
                     ...GatsbyImageSharpFluid
                   }
                 }

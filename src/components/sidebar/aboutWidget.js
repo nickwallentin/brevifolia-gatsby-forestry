@@ -30,7 +30,7 @@ const AboutWidget = () => {
             target="_blank"
           >
             <InstagramIcon />
-            lenabergkvist
+            hakulforfan
           </a>
         </li>
       </AuthorLinks>
