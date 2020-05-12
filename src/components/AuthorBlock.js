@@ -32,7 +32,7 @@ const AuthorBlock = () => {
                   href={data.site.siteMetadata.author.authorInstagramUrl}
                   target="_blank"
                 >
-                  <InstagramIcon /> lenabergkvist
+                  <InstagramIcon /> hakulforfan
                 </a>
               </li>
             </ul>
