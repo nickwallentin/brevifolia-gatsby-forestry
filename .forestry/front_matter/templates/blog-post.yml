@@ -28,6 +28,7 @@ fields:
     - Hälsa
     - Välmående
     - Träning
+    - Upplevelser
     source:
       type: simple
       section: 
