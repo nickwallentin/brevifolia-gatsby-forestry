@@ -6,7 +6,6 @@ import useAuthorData from "../../static_queries/useAuthorData"
 import useInstagramData from "../../static_queries/useInstagramData"
 
 const InstagramWidget = () => {
-  const data = useInstagramData()
   const allAuthorData = useAuthorData()
   const image = allAuthorData.file.childImageSharp.fluid
   const {
@@ -29,21 +28,6 @@ const InstagramWidget = () => {
             </a>
           </BioMeta>
         </Bio>
-        <Images>
-          {data.map(edge => (
-            <a
-              href={authorInstagramUrl}
-              rel="noopener noreferrer"
-              target="_blank"
-              key={JSON.stringify(edge)}
-            >
-              <Img fluid={edge.node.localFile.childImageSharp.fluid} />
-              <Caption>
-                <p>{edge.node.caption}</p>
-              </Caption>
-            </a>
-          ))}
-        </Images>
       </Container>
     </Widget>
   )
