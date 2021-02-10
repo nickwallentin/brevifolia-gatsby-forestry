@@ -28,6 +28,7 @@ fields:
     - Hälsa
     - Välmående
     - Träning
+    - Upplevelser
     source:
       type: simple
       section: 
@@ -54,3 +55,4 @@ fields:
 pages:
 - content/posts/dagens-träningspass-1.md
 - content/posts/det-är-nu.md
+- content/posts/hoger-eller-vanster.md
