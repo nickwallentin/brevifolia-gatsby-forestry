@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "styled-components"
 import Img from "gatsby-image"
-import useInstagramData from "../../static_queries/useInstagramData"
-import useAuthorData from "../../static_queries/useAuthorData"
+import React from "react"
 import { Widget } from "../styled"
+import styled from "styled-components"
+import useAuthorData from "../../static_queries/useAuthorData"
+import useInstagramData from "../../static_queries/useInstagramData"
 
 const InstagramWidget = () => {
   const data = useInstagramData()
@@ -39,9 +39,6 @@ const InstagramWidget = () => {
             >
               <Img fluid={edge.node.localFile.childImageSharp.fluid} />
               <Caption>
-                <div className="post-meta">
-                  {edge.node.likes} gilla-markeringar
-                </div>
                 <p>{edge.node.caption}</p>
               </Caption>
             </a>

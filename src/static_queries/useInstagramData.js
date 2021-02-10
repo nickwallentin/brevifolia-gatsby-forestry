@@ -9,7 +9,7 @@ export default function useBlogData() {
             id
             username
             caption
-            likes
+
             localFile {
               childImageSharp {
                 fluid(maxWidth: 200, maxHeight: 200) {

@@ -58,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: `lenabergkvist`,
+        username: `hakulforfan`,
       },
     },
     `gatsby-transformer-sharp`,
