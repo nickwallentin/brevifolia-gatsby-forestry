@@ -3,7 +3,6 @@ import React from "react"
 import { Widget } from "../styled"
 import styled from "styled-components"
 import useAuthorData from "../../static_queries/useAuthorData"
-import useInstagramData from "../../static_queries/useInstagramData"
 
 const InstagramWidget = () => {
   const allAuthorData = useAuthorData()

@@ -55,12 +55,7 @@ module.exports = {
         defaultQuality: 75,
       },
     },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `hakulforfan`,
-      },
-    },
+
     `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-transformer-remark",
