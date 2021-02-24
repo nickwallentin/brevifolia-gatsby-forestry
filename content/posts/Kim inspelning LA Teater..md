@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 category: Upplevelser
 hero_image: "/content/images/img_1599.JPG"
 date: 2021-02-15T23:00:00Z
