@@ -3,7 +3,7 @@ draft: false
 category: Hälsa
 hero_image: "/content/images/IMG_9798.JPG"
 date: 2020-03-18T12:37:36.000+00:00
-title: Det är nu.
+title: DET ÄR NU
 excerpt: |-
   Snabbt gick det.
 
