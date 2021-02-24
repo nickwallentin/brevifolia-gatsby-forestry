@@ -9,6 +9,8 @@ excerpt: Goda drinkar på restaurang V.
 ---
 Idag UNNADE vi oss en drink på V.
 
-Vi som så många andra är ganska corona-trötta. 
+Vi som så många andra är ganska corona-trötta.
 
 Nu vill man bara ut och LEVA.
+
+Jag och Dennis firade Cabaretkungen Albin som hade fyllt år.
