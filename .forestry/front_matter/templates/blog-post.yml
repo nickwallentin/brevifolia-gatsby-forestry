@@ -53,6 +53,7 @@ fields:
     display_utc: false
   default: now
 pages:
+- content/posts/Drink V.md
 - content/posts/dagens-träningspass-1.md
 - content/posts/det-är-nu.md
 - content/posts/hoger-eller-vanster.md
