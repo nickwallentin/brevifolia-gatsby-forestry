@@ -9,7 +9,7 @@ excerpt: Matlagningskurs på Ciao Lola.
 ---
 Tillsammans med bästa grannarna Maritha o Staffan tillbringades en HEL lördag med att lära sig göra egen pasta.
 
-Detta samtidigt som vi blev uppassade med GODA tilltugg och SMASKIG dryck. Därtill en liten historiebeskrivning av pastans uppkomst.
+Detta samtidigt som vi blev uppassade med GODA tilltugg, (bilden), och SMASKIG dryck. Därtill en liten historiebeskrivning av pastans uppkomst.
 
 Det hela avslutades med att vi åt vår EGEN pasta, tomatsås och serverades gott vin.
 
