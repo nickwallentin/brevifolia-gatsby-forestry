@@ -10,11 +10,13 @@ export default function useBlogData() {
         edges {
           node {
             id
+            html
+            rawMarkdownBody
             frontmatter {
               date(formatString: "D MMMM, YYYY", locale: "sv")
               category
               title
-              excerpt
+
               hero: hero_image {
                 childImageSharp {
                   fluid(maxWidth: 800, maxHeight: 800, cropFocus: ATTENTION) {
