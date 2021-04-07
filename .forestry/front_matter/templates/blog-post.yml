@@ -9,15 +9,6 @@ fields:
 - type: text
   name: title
   label: title
-- name: excerpt
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Ingress
 - name: category
   type: select
   default: []
