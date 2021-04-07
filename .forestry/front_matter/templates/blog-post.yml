@@ -9,23 +9,6 @@ fields:
 - type: text
   name: title
   label: title
-- name: category
-  type: select
-  default: []
-  config:
-    required: false
-    options:
-    - Mat
-    - Hälsa
-    - Välmående
-    - Träning
-    - Upplevelser
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Kategori
 - name: hero_image
   type: file
   config:
