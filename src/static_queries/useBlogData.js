@@ -17,7 +17,7 @@ export default function useBlogData() {
               excerpt
               hero: hero_image {
                 childImageSharp {
-                  fluid(maxWidth: 800, maxHeight: 400, cropFocus: ATTENTION) {
+                  fluid(maxWidth: 800, maxHeight: 800, cropFocus: ATTENTION) {
                     ...GatsbyImageSharpFluid
                   }
                 }

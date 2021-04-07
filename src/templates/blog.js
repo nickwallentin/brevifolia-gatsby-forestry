@@ -1,16 +1,16 @@
+import { Link, graphql } from "gatsby"
 import React, { useEffect, useState } from "react"
-import SEO from "../components/seo"
-import Layout from "../components/Layout"
-import styled from "styled-components"
-import { motion, useViewportScroll, useTransform } from "framer-motion"
-import { graphql, Link } from "gatsby"
-import useBlogData from "../static_queries/useBlogData"
-import useAuthorData from "../static_queries/useAuthorData"
-import AuthorBlock from "../components/AuthorBlock"
-import Sticky from "react-sticky-el"
-import Img from "gatsby-image"
+import { motion, useTransform, useViewportScroll } from "framer-motion"
 
+import AuthorBlock from "../components/AuthorBlock"
 import FacebookIcon from "../assets/svg/facebook.svg"
+import Img from "gatsby-image"
+import Layout from "../components/Layout"
+import SEO from "../components/seo"
+import Sticky from "react-sticky-el"
+import styled from "styled-components"
+import useAuthorData from "../static_queries/useAuthorData"
+import useBlogData from "../static_queries/useBlogData"
 
 const fadeIn = {
   start: {
@@ -51,25 +51,28 @@ export default function Blog(props) {
     <Layout>
       <SEO title={data.frontmatter.title}></SEO>
       <Article initial="start" animate="end">
+        <div className="navigation">
+          <Link to="/">Tillbaka</Link>
+        </div>
         <motion.div className="header">
+          <motion.figure variants={fadeIn} className="featured-image">
+            <Img
+              fluid={data.frontmatter.hero_image.childImageSharp.fluid}
+              alt={data.frontmatter.title}
+            />
+          </motion.figure>
           <motion.div className="heading" variants={fadeIn}>
             <div className="category">{data.frontmatter.category}</div>
             <h1>{data.frontmatter.title}</h1>
-            <p className="excerpt">{data.frontmatter.excerpt}</p>
+
+            <div className="content">
+              <div
+                id="body"
+                className="body"
+                dangerouslySetInnerHTML={{ __html: data.html }}
+              />
+            </div>
             <div className="meta">
-              <div className="author">
-                <figure className="author-image">
-                  <Img fluid={allAuthorData.file.childImageSharp.fluid} />
-                </figure>
-                <div className="author-meta">
-                  <strong>
-                    {allAuthorData.site.siteMetadata.author.authorName}
-                  </strong>
-                  <span>
-                    {data.frontmatter.date} - {data.timeToRead} minuter
-                  </span>
-                </div>
-              </div>
               <div className="social-share">
                 <a
                   href="https://www.facebook.com/sharer/sharer.php?u=#url"
@@ -80,24 +83,12 @@ export default function Blog(props) {
               </div>
             </div>
           </motion.div>
+        </motion.div>
 
-          <motion.figure variants={fadeIn} className="featured-image">
-            <Img
-              fluid={data.frontmatter.hero_image.childImageSharp.fluid}
-              alt={data.frontmatter.title}
-            />
-          </motion.figure>
-        </motion.div>
-        <motion.div variants={fadeIn} className="content">
-          <div>
-            <div
-              id="body"
-              className="body"
-              dangerouslySetInnerHTML={{ __html: data.html }}
-            />
-            <AuthorBlock />
-          </div>
-        </motion.div>
+        <div style={{ maxWidth: "700px", margin: "0 auto" }}>
+          <AuthorBlock />
+        </div>
+
         <div>
           <Link to={`/${nextSlug}`}></Link>
         </div>
@@ -107,6 +98,13 @@ export default function Blog(props) {
 }
 
 const Article = styled(motion.article)`
+  .navigation {
+    padding: 1rem 0;
+    a {
+      text-decoration: none;
+      color: var(--c-body);
+    }
+  }
   .featured-image {
     border-radius: 4px;
     overflow: hidden;
@@ -132,9 +130,9 @@ const Article = styled(motion.article)`
 
   .header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-gap: 4vw;
-    margin: 2rem 0px;
+    margin: 2rem auto;
 
     .author {
       text-align: left;
@@ -184,10 +182,6 @@ const Article = styled(motion.article)`
   }
 
   .content {
-    max-width: 700px;
-    width: 90%;
-    margin: 5rem auto;
-
     p {
       margin-bottom: 2rem;
     }

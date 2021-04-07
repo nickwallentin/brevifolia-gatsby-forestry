@@ -1,16 +1,14 @@
-import React from "react"
-import styled from "styled-components"
-import TagsWidget from "./tagsWidget"
 import AboutWidget from "./aboutWidget"
 import InstagramWidget from "./instagramWidget"
 import LatestPostsWidget from "./latestPostsWidget"
+import React from "react"
+import TagsWidget from "./tagsWidget"
+import styled from "styled-components"
 
 const Sidebar = () => {
   return (
     <Container>
       <AboutWidget />
-      <TagsWidget />
-      <InstagramWidget />
     </Container>
   )
 }

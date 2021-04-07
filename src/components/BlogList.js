@@ -1,12 +1,11 @@
-import React from "react"
-import styled from "styled-components"
-import { motion } from "framer-motion"
-import { Link } from "gatsby"
-import useBlogData from "../static_queries/useBlogData"
 import Img from "gatsby-image"
+import { Link } from "gatsby"
 import Media from "react-media"
-
+import React from "react"
 import { Wrap } from "./styled"
+import { motion } from "framer-motion"
+import styled from "styled-components"
+import useBlogData from "../static_queries/useBlogData"
 
 const List = {
   hidden: { opacity: 0 },
@@ -98,6 +97,8 @@ const Post = styled(motion.li)`
   a {
     color: var(--c-heading);
     text-decoration: none;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
   }
 
   .content {
