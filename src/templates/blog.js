@@ -248,7 +248,7 @@ export const getPostData = graphql`
         date(formatString: "D MMMM, YYYY", locale: "sv")
         hero_image {
           childImageSharp {
-            fluid(maxWidth: 900, maxHeight: 900, cropFocus: CENTER) {
+            fluid(maxWidth: 900, maxHeight: 900, cropFocus: ATTENTION) {
               ...GatsbyImageSharpFluid
             }
           }
