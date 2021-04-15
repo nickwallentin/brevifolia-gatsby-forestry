@@ -65,7 +65,8 @@ export default function BlogList() {
                     <h2>{blog.node.frontmatter.title}</h2>
                     <span className="date">{blog.node.frontmatter.date}</span>
                     <div id="body" className="body">
-                      {blog.node.rawMarkdownBody.substring(0, 100).trim()}...
+                      {blog.node.rawMarkdownBody.substring(0, 300).trim()}...
+                      <span>Läs mer</span>
                     </div>
                   </motion.div>
                 </Link>
@@ -87,6 +88,11 @@ const Post = styled(motion.li)`
   #body {
     font-size: 1rem;
     line-height: 1.5rem;
+    span {
+      color: var(--c-accent);
+      margin-top: 1rem;
+      display: block;
+    }
   }
   figure {
     border-radius: 4px;
