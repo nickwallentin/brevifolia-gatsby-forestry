@@ -2,7 +2,7 @@
 new_page_extension: md
 auto_deploy: false
 admin_path: ''
-webhook_url: https://webhook.gatsbyjs.com/hooks/data_source/publish/a10757c4-3410-4a97-b133-9fe5d05cbfe7
+webhook_url: https://api.netlify.com/build_hooks/6078407a8d9ebb0c730b273d
 sections:
 - type: heading
   label: Innehåll
