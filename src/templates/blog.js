@@ -62,7 +62,6 @@ export default function Blog(props) {
             />
           </motion.figure>
           <motion.div className="heading" variants={fadeIn}>
-            <div className="category">{data.frontmatter.category}</div>
             <h1>{data.frontmatter.title}</h1>
 
             <div className="content">
@@ -99,7 +98,10 @@ export default function Blog(props) {
 
 const Article = styled(motion.article)`
   .navigation {
-    padding: 1rem 0;
+    padding: 1rem;
+    @media (min-width: 600px) {
+      padding: 1rem 0px;
+    }
     a {
       text-decoration: none;
       color: var(--c-body);
@@ -131,7 +133,7 @@ const Article = styled(motion.article)`
   .header {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-gap: 4vw;
+    grid-gap: 2rem;
     margin: 2rem auto;
 
     .author {
