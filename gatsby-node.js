@@ -24,7 +24,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
   //dynamically create pages here
   //get path to template
   const blogTemplate = path.resolve("./src/templates/blog.js")
-  const categoryTemplate = path.resolve("./src/templates/category.js")
 
   //get slugs
   const response = await graphql(`
@@ -44,30 +43,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
   //create new pages with unique slug
-  const category = []
+
   response.data.allMarkdownRemark.edges.forEach(edge => {
     createPage({
       component: blogTemplate,
       path: `/${edge.node.fields.slug}`,
       context: {
         slug: edge.node.fields.slug,
-      },
-    })
-
-    category.push(edge.node.frontmatter.category)
-  })
-
-  const cats = _.uniq(category)
-  cats.forEach(cat => {
-    const slug = _.trim(
-      cat.replace(/["åä"]+/g, "a").replace(/["ö"]+/g, "o")
-    ).toLowerCase()
-
-    createPage({
-      component: categoryTemplate,
-      path: `/${slug}`,
-      context: {
-        category: cat,
       },
     })
   })
