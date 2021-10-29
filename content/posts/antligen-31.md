@@ -1,7 +1,7 @@
 ---
 draft: true
 hero_image: "/content/images/kim-31.JPG"
-date: 2021-10-29T08:03:41Z
+date: 2020-03-04T09:03:41Z
 title: ÄNTLIGEN 31
 
 ---
